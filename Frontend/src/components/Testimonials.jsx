@@ -27,7 +27,7 @@ export default function Testimonials() {
       img: "/images/testimonial.jpg",
       name: "David Smith",
       role: "Founder & Leader",
-      text: "I recently worked with dixom for my home renovation project, and I couldn't be happier with the results.",
+      text: "I recently worked with dixom for my home renovation project and I couldn't be happier with the results.",
       stars: 4,
     },
   ];
