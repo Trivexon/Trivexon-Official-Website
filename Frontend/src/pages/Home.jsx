@@ -17,12 +17,12 @@ export default function Home() {
       <Hero />
       <Marquee />
       <AboutSection />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <WorkProcess/>
       <ServicesSection />
       <WhyChooseUs/>
       <FAQSection/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
       <Footer />
     </div>
   );

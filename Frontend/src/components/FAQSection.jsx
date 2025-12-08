@@ -8,39 +8,58 @@ export default function FAQSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
         {/* LEFT CONTENT */}
-        <div>
-          <p className="uppercase text-yellow-500 font-semibold tracking-wider mb-3">
-            Our FAQs
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-10">
-            Empowering Knowledge: <br /> Your Questions Answered
-          </h2>
+       {/* LEFT CONTENT — FORM */}
+<div>
+  <p className="uppercase text-yellow-500 font-semibold tracking-wider mb-3">
+    Get in Touch
+  </p>
+  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
+    Have Questions? <br /> We’re Here to Help
+  </h2>
 
-          {/* ACCORDION */}
-          <div className="space-y-4">
-            {[
-              "How Can Business Consulting Benefit My Company?",
-              "What Are the Costs of Your Consulting Services?",
-              "How Do You Measure the Success of a Project?",
-              "Do You Provide Remote Consulting Services?",
-            ].map((q, i) => (
-              <details
-                key={i}
-                className="bg-gray-100 px-6 py-4 rounded-xl cursor-pointer shadow-sm hover:shadow-md transition"
-              >
-                <summary className="flex justify-between items-center font-semibold text-gray-800">
-                  {q}
-                  <span className="text-gray-500 text-xl">⌄</span>
-                </summary>
-                <p className="mt-3 text-gray-600">
-                  It is widely recognized that a reader's attention can be diverted by
-                  the content layout of a page. Many desktop publishing software and
-                  website editors now use Lorem Ipsum as their default placeholder.
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
+  <form className="space-y-5">
+    {/* Name */}
+    <div>
+      <label className="text-gray-700 font-medium">Full Name</label>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:ring-purple-500 outline-none transition"
+      />
+    </div>
+
+    {/* Email */}
+    <div>
+      <label className="text-gray-700 font-medium">Email Address</label>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:ring-purple-500 outline-none transition"
+      />
+    </div>
+
+   
+
+    {/* Message */}
+    <div>
+      <label className="text-gray-700 font-medium">Message</label>
+      <textarea
+        placeholder="Write your message..."
+        rows="5"
+        className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:ring-purple-500 outline-none transition resize-none"
+      ></textarea>
+    </div>
+
+    {/* Submit Button */}
+    <button
+      type="submit"
+      className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-3 rounded-lg font-semibold shadow-lg hover:opacity-90 transition"
+    >
+      Send Message
+    </button>
+  </form>
+</div>
+
 
         {/* RIGHT IMAGE + FLOATING CARD */}
         <div className="relative flex justify-center">
