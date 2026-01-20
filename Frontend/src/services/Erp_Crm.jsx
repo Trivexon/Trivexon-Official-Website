@@ -58,7 +58,7 @@ export default function HeroSection() {
             {/* RIGHT IMAGE */}
             <div className="overflow-hidden bg-transparent">
               <img
-                src="/servicesimg/web.png"
+                src="/servicesimg/crm.png"
                 alt="web design"
                 className="w-400 h-full object-cover"
               />
