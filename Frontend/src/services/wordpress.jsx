@@ -1,434 +1,70 @@
 import React from "react";
+import ServicePage from "./ServicePage";
+import { Globe, Settings, Shield, Zap, RefreshCw, PenTool, Code2, Search, Smartphone, Layers } from "lucide-react";
 
-// Add custom styles for 3D flip effect
-const flipStyles = `
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .transform-style-preserve-3d {
-    transform-style: preserve-3d;
-  }
-  .group:hover .group-hover\\:rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-`;
-
-
-export default function HeroSection() {
+export default function Wordpress() {
   return (
-    <>
-      <style>{flipStyles}</style>
-      <section
-        className="relative w-full  bg-cover bg-center overflow-hidden"
-      // style={{
-      //   backgroundImage:
-      //     "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d')",
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#0F172A]/10"></div>
-
-        {/* Content */}
-        <div className="relative max-w-9xl mx-auto px-6 py-10">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            {/* LEFT CONTENT */}
-            <div className="text-white animate-fadeInUp ml-30">
-              <h1 className="text-[42px] lg:text-[52px]  -mt-35 font-bold text-black leading-tight">
-                Professional WordPress Development Services
-              </h1>
-
-              <div className="w-16 h-[3px] bg-blue-500 my-6"></div>
-
-              <p className="text-lg text-blue-900 max-w-xl">
-                We create stunning, high-performance WordPress websites that drive engagement, conversions, and business growth through custom development and expert optimization.
-              </p>
-
-              <div className="mt-8 border-l-4 border-blue-500 pl-6 italic text-blue-900">
-                We focus on long-term partnerships and measurable digital
-                success.
-              </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="overflow-hidden bg-transparent">
-              <img
-                src="/servicesimg/wordpress hero.png"
-                alt="web design"
-                className="w-300 h-full -mt-20 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* BOTTOM WAVE */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            className="w-full h-[80px] rotate-180"
-          >
-            <path
-              d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7
-              c75.8,32.2,133.7,44.5,192.6,49.7
-              c23.6,2.1,48.7,3.5,103.4-2.5
-              c54.7-6,106.2-25.6,106.2-25.6V0H0v207.3z"
-              fill="#ffffff"
-            />
-          </svg>
-        </div>
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section className="w-full bg-white py-14">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* LEFT IMAGE */}
-            <div className="flex justify-center">
-              <img
-                src="/servicesimg/wordpress.png"
-                alt="Website Design Illustration"
-                className="max-w-[480px] w-full"
-              />
-            </div>
-
-            {/* RIGHT CONTENT */}
-            <div>
-
-              <h2 className=" text-[38px] leading-tight font-bold text-[#0F2A56]">
-                Reasons To Choose Us
-                as Your
-                WordPress Development Partner
-              </h2>
-
-              <p className="mt-6 text-gray-600 leading-relaxed text-[15px]">
-                We are a leading WordPress development company helping businesses create powerful,
-                scalable, and secure websites. Our solutions are built on
-                cutting-edge development practices, WordPress expertise, and deep understanding of digital experiences.
-              </p>
-
-              <p className="mt-4 text-gray-600 leading-relaxed text-[15px]">
-                Our WordPress experts specialize in custom theme development, plugin creation,
-                performance optimization, and security. From initial consultation and requirements analysis to
-                deployment and ongoing maintenance, we provide end-to-end solutions focused on user experience,
-                performance, and business growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WORDPRESS DEVELOPMENT PROCESS SECTION */}
-      <WebDesignProcess />
-      {/* =============================================================================================== */}
-      {/* WORDPRESS ADVANTAGES SECTION */}
-      <section className="w-full bg-gray-50 py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Heading */}
-          <h2 className="text-4xl font-semibold text-center text-[#243B6B] mb-16">
-            Unlocking the Advantages of Professional WordPress Development
-          </h2>
-
-          {/* First Row - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Custom Design */}
-            <FlipBox
-              icon="/images/global-network.png"
-              iconBg="bg-blue-100"
-              title="Custom WordPress Design"
-              description="Tailored WordPress themes and designs that reflect your brand identity and provide unique user experiences that stand out from competitors."
-            />
-
-            {/* SEO Optimized */}
-            <FlipBox
-              icon="/images/user-experience.png"
-              iconBg="bg-green-100"
-              title="SEO-Friendly Development"
-              description="WordPress websites built with SEO best practices, clean code, and optimized structure to improve search engine rankings and organic traffic."
-            />
-
-            {/* Responsive Design */}
-            <FlipBox
-              icon="/images/marketing.png"
-              iconBg="bg-purple-100"
-              title="Fully Responsive Websites"
-              description="Mobile-first WordPress development ensuring perfect display and functionality across all devices, from desktop to mobile phones."
-            />
-          </div>
-
-          {/* Second Row - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-            {/* Plugin Development */}
-            <FlipBox
-              icon="/images/affiliate-marketing.png"
-              iconBg="bg-orange-100"
-              title="Custom Plugin Development"
-              description="Tailored WordPress plugins that extend functionality, integrate with third-party services, and enhance user experience with custom features."
-            />
-
-            {/* Performance Optimization */}
-            <FlipBox
-              icon="/images/competitive-advantage.png"
-              iconBg="bg-red-100"
-              title="Performance Optimization"
-              description="Speed optimization, caching solutions, and performance tuning to ensure fast loading times and excellent user experience."
-            />
-
-            {/* Security & Maintenance */}
-            <FlipBox
-              icon="/images/customer-service.png"
-              iconBg="bg-teal-100"
-              title="Security & Maintenance"
-              description="Regular security updates, malware protection, and ongoing maintenance to keep your WordPress site secure and running smoothly."
-            />
-          </div>
-        </div>
-      </section>
-
-
-      {/* TECH STACK SECTION */}
-      <section className="w-full bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-              WordPress Technology Stack
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Modern technologies and tools we use to build powerful WordPress websites
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              { name: "WordPress", category: "CMS", icon: "🔧" },
-              { name: "PHP", category: "Backend", icon: "🐘" },
-              { name: "MySQL", category: "Database", icon: "🐬" },
-              { name: "WooCommerce", category: "E-commerce", icon: "🛒" },
-              { name: "Elementor", category: "Builder", icon: "🎨" },
-              { name: "WP Rocket", category: "Performance", icon: "🚀" },
-              { name: "Yoast SEO", category: "SEO", icon: "📈" },
-              { name: "ACF Pro", category: "Fields", icon: "📝" },
-              { name: "Bootstrap", category: "CSS", icon: "🎭" },
-              { name: "jQuery", category: "JavaScript", icon: "⚡" },
-              { name: "Git", category: "Version Control", icon: "📦" },
-              { name: "cPanel", category: "Hosting", icon: "🖥️" }
-            ].map((tech, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">{tech.icon}</span>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">{tech.name}</h3>
-                <p className="text-sm text-gray-500">{tech.category}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CLIENT LOGOS SECTION */}
-      <section className="w-full bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-              Trusted by Leading Clients
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We've helped businesses across various industries establish their online presence with WordPress solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3  items-center">
-            {[
-              { name: "Site Invention", logo: "/images/logo.jpeg" },
-              { name: "TRIVEXON", logo: "/clients/trivexon.png" },
-              { name: "SKILLNOXERA", logo: "/clients/skillnoxera.png" },
-
-            ].map((client, index) => (
-              <div key={index} className="flex items-center justify-center">
-                <div className="w-52 h-40 bg-white rounded-lg shadow-sm flex items-center justify-center hover:shadow-md transition-shadow duration-300 border border-gray-100 mx-auto">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-w-full max-h-full object-contain"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="hidden items-center justify-center w-full h-full">
-                    <div className="text-center">
-                      <div className="text-2xl mb-1">🏢</div>
-                      <div className="text-xs font-medium text-gray-600">{client.name}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="w-full bg-white py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-              Ready to Transform Your Online Presence with
-              <br /> Professional WordPress Development?
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Build stunning, high-performance websites that drive engagement, conversions, and business growth.
-            </p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
-              Get Free WordPress Consultation
-            </button>
-          </div>
-
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="w-full h-full bg-no-repeat bg-center opacity-10"
-              style={{
-                backgroundImage: "url('/images/dot-grid.png')",
-                backgroundSize: "50px 50px",
-              }}
-            ></div>
-          </div>
-        </div>
-      </section>
-
-    </>
-  );
-}
-
-/* Flip Box Component */
-function FlipBox({ icon, iconBg, title, description }) {
-  return (
-    <div className="group relative  h-65 perspective-1000">
-      <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
-        {/* Front Side */}
-        <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-8">
-          <div className="text-center h-full flex flex-col justify-center">
-            <div className={`w-20 h-20 mx-auto mb-6 ${iconBg} rounded-full flex items-center justify-center`}>
-              <img src={icon} alt={title} className="w-12 h-12" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">{title}</h3>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              {description.substring(0, 100)}...
-            </p>
-
-          </div>
-        </div>
-
-        {/* Back Side */}
-        <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-blue-500 rounded-xl shadow-lg p-8">
-          <div className="text-center h-full flex flex-col justify-center">
-            <h3 className="text-xl font-bold text-white mb-6">{title}</h3>
-            <p className="text-white leading-relaxed">
-              {description}
-            </p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* Step Card */
-function Step({ step, title, logo, color, className = "" }) {
-  return (
-    <div className={`flex flex-col items-center text-center w-44 ${className}`}>
-      <span className="text-sm font-semibold text-blue-600 mb-3">
-        {step}
-      </span>
-
-      <div
-        className={`w-20 h-25 flex items-center justify-center rounded-xl shadow-md ${color}`}
-      >
-        <img
-          src={logo}
-          alt={title}
-          className="w-10 h-10 object-contain"
-        />
-      </div>
-
-      <p className="mt-4 text-sm font-medium text-gray-700 leading-snug">
-        {title}
-      </p>
-    </div>
-  );
-}
-
-function WebDesignProcess() {
-  return (
-    <section className="w-full bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center relative">
-
-        {/* Heading */}
-        <h2 className="text-4xl font-semibold text-[#243B6B] mb-24">
-          Our WordPress Development Process at
-          <span className="font-bold"> Site Invention</span>
-        </h2>
-
-        {/* Arc Line */}
-        <div className="absolute left-1/2 top-[220px] -translate-x-1/2 w-[85%] h-[200px] border-t border-dashed border-gray-800 rounded-t-full" />
-
-        {/* Steps */}
-        <div className="relative flex justify-between items-start">
-
-          {/* STEP 1 */}
-          <Step
-            step="STEP 1"
-            title="Requirements Gathering & Planning"
-            logo="/images/ser1.png"
-            color="bg-orange-50 text-orange-500"
-            className="mt-40"
-          />
-
-          {/* STEP 2 */}
-          <Step
-            step="STEP 2"
-            title="WordPress Setup & Configuration"
-            logo="/images/ser2.png"
-            color="bg-blue-50 text-blue-500"
-            className="mt-10"
-          />
-
-          {/* STEP 3 */}
-          <Step
-            step="STEP 3"
-            title="Custom Theme & Plugin Development"
-            logo="/images/ser3.png"
-            color="bg-green-50 text-green-500"
-            className="-mt-10"
-          />
-
-          {/* STEP 4 */}
-          <Step
-            step="STEP 4"
-            title="Content Creation & Optimization"
-            logo="/images/ser4.png"
-            color="bg-sky-50 text-sky-500"
-            className="mt-10"
-          />
-
-          {/* STEP 5 */}
-          <Step
-            step="STEP 5"
-            title="Testing & Launch"
-            logo="/images/ser5.png"
-            color="bg-pink-50 text-pink-500"
-            className="mt-40"
-          />
-
-        </div>
-      </div>
-    </section>
+    <ServicePage
+      badge="WordPress Development"
+      title='Powerful WordPress Sites <span class="text-gradient">Without the Limitations</span>'
+      description="We build fast, secure, and fully customised WordPress websites — from simple marketing sites to complex multi-site networks — with clean code and no bloated plugins."
+      accentColor="#FBBF24"
+      heroIcon={<Globe className="w-full h-full" />}
+      stats={[
+        { value: "80+", label: "WP Sites Built" },
+        { value: "90+", label: "Avg. PageSpeed" },
+        { value: "0", label: "Bloated Plugins" },
+      ]}
+      overview={{
+        heading: 'WordPress Done <span class="text-gradient">The Right Way</span>',
+        paragraphs: [
+          "WordPress powers 43% of the internet — but most agencies leave you with slow, insecure sites packed with unnecessary plugins. We take a custom-first approach: lean, fast, and built exactly for your needs.",
+          "From custom Gutenberg blocks to Advanced Custom Fields implementations, REST API integrations, and headless WordPress (Next.js frontend), we handle every tier of WordPress complexity.",
+        ],
+      }}
+      benefits={[
+        "Custom WordPress theme — no generic templates",
+        "Advanced Custom Fields (ACF) for flexible content",
+        "Optimised for 90+ Google PageSpeed scores",
+        "Hardened security configuration from day one",
+        "Easy-to-use admin panel your team can manage independently",
+        "WooCommerce integration for selling on WordPress",
+      ]}
+      features={[
+        { icon: PenTool, title: "Custom Themes", desc: "Fully bespoke WordPress themes built from scratch in Figma and coded by hand.", color: "#FBBF24" },
+        { icon: Layers, title: "Custom Blocks", desc: "Gutenberg block development for flexible, easy-to-edit page layouts.", color: "#7C3AED" },
+        { icon: Zap, title: "Performance Optimisation", desc: "Caching, lazy loading, image optimisation, and CDN setup for blazing speeds.", color: "#06B6D4" },
+        { icon: Shield, title: "Security Hardening", desc: "Login protection, malware scanning, firewall, and regular security updates.", color: "#10B981" },
+        { icon: Settings, title: "Plugin Development", desc: "Custom WordPress plugins for unique functionality that off-the-shelf plugins can't deliver.", color: "#F472B6" },
+        { icon: Code2, title: "REST API & Headless", desc: "WordPress as a headless CMS powering React or Next.js frontends via GraphQL/REST.", color: "#A855F7" },
+        { icon: Search, title: "Yoast / RankMath SEO", desc: "Full SEO configuration, XML sitemaps, schema markup, and meta setup.", color: "#EF4444" },
+        { icon: Smartphone, title: "Mobile-First Design", desc: "Responsive layouts tested across all screen sizes and browsers.", color: "#F59E0B" },
+        { icon: RefreshCw, title: "Multisite Networks", desc: "WordPress Multisite setup for agencies, universities, and multi-brand organisations.", color: "#FBBF24" },
+      ]}
+      process={[
+        { title: "Discovery", desc: "Goals, content structure, plugin requirements, and tech decisions defined upfront." },
+        { title: "Design", desc: "Custom Figma designs for all key templates — homepage, blog, inner pages." },
+        { title: "Theme Development", desc: "Handcoded PHP/HTML5/CSS3 theme with ACF, Gutenberg blocks, and CPTs." },
+        { title: "Plugin Setup", desc: "Only the necessary, trusted plugins — configured and optimised properly." },
+        { title: "Performance & Security", desc: "Caching layer, image CDN, security hardening, and speed testing." },
+        { title: "Launch & Support", desc: "Managed hosting setup, DNS, SSL, and ongoing maintenance plans." },
+      ]}
+      techStack={[
+        { icon: "📝", name: "WordPress", tag: "CMS" },
+        { icon: "🐘", name: "PHP", tag: "Backend" },
+        { icon: "🎨", name: "CSS3", tag: "Styling" },
+        { icon: "⚡", name: "ACF Pro", tag: "Fields" },
+        { icon: "🔍", name: "Yoast", tag: "SEO" },
+        { icon: "🛒", name: "WooCommerce", tag: "Shop" },
+        { icon: "☁️", name: "Cloudflare", tag: "CDN" },
+        { icon: "🔒", name: "Wordfence", tag: "Security" },
+      ]}
+      faq={[
+        { q: "Can you redesign our existing WordPress site?", a: "Yes! We specialise in WordPress redesigns — migrating content, improving performance, and modernising the design without downtime." },
+        { q: "Will we be able to manage the site ourselves?", a: "Absolutely. We build the admin panel to be intuitive and provide training so your team can make updates independently." },
+        { q: "Do you use page builders like Elementor?", a: "We avoid heavy page builders for performance reasons. We build custom Gutenberg blocks instead — much faster and cleaner." },
+        { q: "Do you handle WordPress hosting?", a: "Yes, we can set up and manage hosting on WP Engine, Cloudways, or SiteGround, and handle all server configurations." },
+      ]}
+    />
   );
 }

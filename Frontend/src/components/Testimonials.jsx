@@ -1,158 +1,161 @@
 import React, { useState } from "react";
-import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Raamnaath Gopalakrishnan",
-    text: "Site Invention has been working with us for the past four years, handling our website, landing pages, and Google campaigns. They consistently deliver...",
+    role: "CEO, TechVentures",
+    text: "Trivexon has been working with us for over four years, handling our website, landing pages, and digital campaigns. They consistently deliver exceptional results that exceed expectations.",
     avatar: "R",
-    bg: "bg-pink-500",
+    color: "#7C3AED",
   },
   {
-    name: "Sachinam Incense Products",
-    text: "I had a fantastic experience with Site Invention website Creation’s. From the initial consultation to the final website launch, they were with me offering...",
-    avatar: "/images/user1.jpg",
+    name: "Sachinam Inc.",
+    role: "Founder, E-commerce Brand",
+    text: "From the initial consultation to the final website launch, the team was incredibly professional. They transformed our vision into a stunning digital experience that truly represents our brand.",
+    avatar: "S",
+    color: "#06B6D4",
   },
   {
-    name: "savita ballal",
-    text: "I recently had a collaboration with Site Invention website Creation service to build my online store. The team was incredibly professional and attentive to...",
-    avatar: "/images/user2.jpg",
+    name: "Savita Ballal",
+    role: "Owner, Boutique Store",
+    text: "I recently had a collaboration with Trivexon to build my online store. The team was incredibly professional and attentive to every detail. The final product surpassed all my expectations!",
+    avatar: "SB",
+    color: "#F472B6",
   },
   {
-    name: "savita ballal",
-    text: "I recently had a collaboration with Site Invention website Creation service to build my online store. The team was incredibly professional and attentive to...",
-    avatar: "/images/user2.jpg",
+    name: "Arjun Mehta",
+    role: "Director, Logistics Corp",
+    text: "Outstanding team! They built our ERP system with precision and deep domain understanding. Our operational efficiency improved by 40% within the first quarter after launch.",
+    avatar: "AM",
+    color: "#10B981",
   },
   {
-    name: "savita ballal",
-    text: "I recently had a collaboration with Site Invention website Creation service to build my online store. The team was incredibly professional and attentive to...",
-    avatar: "/images/user2.jpg",
+    name: "Priya Sharma",
+    role: "Marketing Head, FinTech",
+    text: "The AI automation solutions Trivexon built for us completely transformed how we work. We've automated 70% of our repetitive tasks and our team can now focus on growth.",
+    avatar: "PS",
+    color: "#FBBF24",
   },
 ];
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsToShow = 3;
+  const cardsToShow = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3;
+  const maxIndex = testimonials.length - 3;
 
-  const handlePrev = () => {
-    setCurrentIndex(prev => Math.max(0, prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex(prev => Math.min(testimonials.length - cardsToShow, prev + 1));
-  };
-
-  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + cardsToShow);
+  const handlePrev = () => setCurrentIndex(prev => Math.max(0, prev - 1));
+  const handleNext = () => setCurrentIndex(prev => Math.min(maxIndex, prev + 1));
+  const visible = testimonials.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="relative w-full bg-[#F6FBFE] py-24 px-6 overflow-hidden">
+    <section className="relative py-24 bg-[#0A0F1E] overflow-hidden">
+      {/* Decorations */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+      <div className="orb orb-violet w-[500px] h-[500px] bottom-0 right-0 opacity-15 blur-[150px]" />
+      <div className="orb orb-cyan w-[300px] h-[300px] top-0 left-0 opacity-10 blur-[100px]" />
 
-      {/* Top Curve */}
-      <div className="absolute top-0 left-0 w-full h-24 bg-white rounded-b-[100%]" />
-
-      <div className="relative max-w-7xl mx-auto">
-
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-10 mb-16 items-center">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-14">
           <div>
-            <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase">
-              TESTIMONIALS
-            </span>
-            <h2 className="mt-4 text-4xl font-bold text-[#1E2A4A]">
-              What Clients Say About Us
+            <div className="flex mb-4">
+              <span className="section-badge">Testimonials</span>
+            </div>
+            <h2 className="section-title">
+              What Our <span className="text-gradient">Clients</span> Say
             </h2>
           </div>
-          
+
+          {/* Navigation */}
+          <div className="flex gap-3">
+            <button
+              onClick={handlePrev}
+              disabled={currentIndex === 0}
+              className={`w-11 h-11 rounded-xl border flex items-center justify-center transition-all duration-200 ${
+                currentIndex === 0
+                  ? 'border-[rgba(255,255,255,0.06)] text-slate-600 cursor-not-allowed'
+                  : 'border-[rgba(124,58,237,0.3)] text-violet-400 hover:bg-[rgba(124,58,237,0.1)] hover:border-violet-500'
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={currentIndex >= maxIndex}
+              className={`w-11 h-11 rounded-xl border flex items-center justify-center transition-all duration-200 ${
+                currentIndex >= maxIndex
+                  ? 'border-[rgba(255,255,255,0.06)] text-slate-600 cursor-not-allowed'
+                  : 'border-[rgba(124,58,237,0.3)] text-violet-400 hover:bg-[rgba(124,58,237,0.1)] hover:border-violet-500'
+              }`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        {/* Cards Container */}
-        <div className="relative">
-          {/* Left Arrow */}
-          <button
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            className={`absolute -left-6 top-1/2 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full z-10 transition-all ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 cursor-pointer'
-              }`}
-          >
-            <FaChevronLeft />
-          </button>
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {visible.map((item, index) => (
+            <div
+              key={currentIndex + index}
+              className="glass-card-hover card-shine rounded-2xl p-7 relative flex flex-col"
+            >
+              {/* Quote icon */}
+              <div className="w-10 h-10 rounded-xl bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] flex items-center justify-center mb-5">
+                <Quote className="w-4 h-4 text-violet-400" />
+              </div>
 
-          {/* Right Arrow */}
-          <button
-            onClick={handleNext}
-            disabled={currentIndex >= testimonials.length - cardsToShow}
-            className={`absolute -right-6 top-1/2 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full z-10 transition-all ${currentIndex >= testimonials.length - cardsToShow ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 cursor-pointer'
-              }`}
-          >
-            <FaChevronRight />
-          </button>
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
 
-          {/* Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {visibleTestimonials.map((item, index) => (
-              <div
-                key={currentIndex + index}
-                className="bg-white rounded-2xl shadow-md p-8 text-center transition-all duration-300"
-              >
-                {/* Avatar */}
-                <div className="relative -mt-14 mb-6 flex justify-center">
-                  {item.avatar.length === 1 ? (
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold ${item.bg}`}>
-                      {item.avatar}
-                    </div>
-                  ) : (
-                    <img
-                      src={item.avatar}
-                      alt={item.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                  )}
+              {/* Text */}
+              <p className="text-slate-300 text-sm leading-relaxed font-[Inter] mb-6 flex-1">
+                "{item.text}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-5 border-t border-[rgba(255,255,255,0.06)]">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center font-[Outfit] font-bold text-sm text-white flex-shrink-0"
+                  style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}88)` }}
+                >
+                  {item.avatar}
+                </div>
+                <div>
+                  <p className="font-[Outfit] font-semibold text-white text-sm">{item.name}</p>
+                  <p className="text-slate-500 text-xs font-[Inter]">{item.role}</p>
+                </div>
+                <div className="ml-auto">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
-                    alt="Google"
-                    className="w-6 h-6 absolute bottom-0 right-[calc(50%-32px)] bg-white rounded-full"
+                    alt="Google Review"
+                    className="w-5 h-5 opacity-60"
                   />
                 </div>
-
-                {/* Name */}
-                <h3 className="font-semibold text-lg mb-2">{item.name}</h3>
-
-                {/* Stars */}
-                <div className="flex justify-center gap-1 mb-4 text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-
-                {/* Text */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.text}
-                </p>
-
-                <button className="mt-4 text-gray-400 text-sm">
-                  Read more
-                </button>
               </div>
-            ))}
-          </div>
-
-          {/* Progress Indicators */}
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: Math.ceil(testimonials.length / cardsToShow) }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index * cardsToShow)}
-                className={`w-2 h-2 rounded-full transition-all ${currentIndex === index * cardsToShow
-                    ? 'bg-blue-600 w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-              />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* CTA */}
-
+        {/* Progress dots */}
+        <div className="flex justify-center gap-2 mt-10">
+          {Array.from({ length: testimonials.length - 2 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentIndex(i)}
+              className={`transition-all duration-300 rounded-full ${
+                currentIndex === i
+                  ? 'w-8 h-2 bg-gradient-to-r from-violet-500 to-cyan-500'
+                  : 'w-2 h-2 bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.3)]'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,432 +1,70 @@
 import React from "react";
+import ServicePage from "./ServicePage";
+import { Bot, Zap, RefreshCw, BarChart2, Mail, MessageSquare, Shield, Database, Settings, Globe } from "lucide-react";
 
-// Add custom styles for 3D flip effect
-const flipStyles = `
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .transform-style-preserve-3d {
-    transform-style: preserve-3d;
-  }
-  .group:hover .group-hover\\:rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-`;
-
-
-export default function HeroSection() {
+export default function Ai_automation() {
   return (
-    <>
-      <style>{flipStyles}</style>
-      <section
-        className="relative w-full  bg-cover bg-center overflow-hidden"
-      // style={{
-      //   backgroundImage:
-      //     "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d')",
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#0F172A]/10"></div>
-
-        {/* Content */}
-        <div className="relative max-w-9xl mx-auto px-6 py-10">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            {/* LEFT CONTENT */}
-            <div className="text-white animate-fadeInUp ml-30">
-              <h1 className="text-[42px] lg:text-[52px]  -mt-35 font-bold text-black leading-tight">
-                Professional AI Automation Services
-              </h1>
-
-              <div className="w-16 h-[3px] bg-blue-500 my-6"></div>
-
-              <p className="text-lg text-blue-900 max-w-xl">
-                We implement cutting-edge AI automation solutions that streamline workflows, reduce costs, and transform your business operations with intelligent technology.
-              </p>
-
-              <div className="mt-8 border-l-4 border-blue-500 pl-6 italic text-blue-900">
-                We focus on intelligent automation and measurable business transformation.
-              </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="overflow-hidden bg-transparent">
-              <img
-                src="/servicesimg/ai automation.png"
-                alt="AI Automation"
-                className="w-400 h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* BOTTOM WAVE */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            className="w-full h-[80px] rotate-180"
-          >
-            <path
-              d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7
-              c75.8,32.2,133.7,44.5,192.6,49.7
-              c23.6,2.1,48.7,3.5,103.4-2.5
-              c54.7-6,106.2-25.6,106.2-25.6V0H0v207.3z"
-              fill="#ffffff"
-            />
-          </svg>
-        </div>
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section className="w-full bg-white py-14">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* LEFT IMAGE */}
-            <div className="flex justify-center">
-              <img
-                src="/servicesimg/ai automation about.png"
-                alt="AI Automation Illustration"
-                className="max-w-[480px] w-full"
-              />
-            </div>
-
-            {/* RIGHT CONTENT */}
-            <div>
-
-              <h2 className=" text-[38px] leading-tight font-bold text-[#0F2A56]">
-                Reasons To Choose Us
-                as Your
-                AI Automation Partner
-              </h2>
-
-              <p className="mt-6 text-gray-600 leading-relaxed text-[15px]">
-                We are a leading AI automation company helping businesses leverage artificial intelligence to
-                automate processes, enhance decision-making, and drive innovation. Our solutions are built on cutting-edge
-                machine learning, natural language processing, and robotic process automation.
-              </p>
-
-              <p className="mt-4 text-gray-600 leading-relaxed text-[15px]">
-                Our AI experts specialize in intelligent automation, predictive analytics, chatbot development, and
-                workflow optimization. From initial AI strategy and process analysis to implementation and continuous improvement,
-                we provide end-to-end solutions focused on efficiency, accuracy, and business growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI AUTOMATION PROCESS SECTION */}
-      <WebDesignProcess />
-      {/* =============================================================================================== */}
-      {/* AI AUTOMATION ADVANTAGES SECTION */}
-      <section className="w-full bg-gray-50 py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Heading */}
-          <h2 className="text-4xl font-semibold text-center text-[#243B6B] mb-16">
-            Unlocking the Advantages of Professional AI Automation
-          </h2>
-
-          {/* First Row - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Intelligent Process Automation */}
-            <FlipBox
-              icon="/images/global-network.png"
-              iconBg="bg-blue-100"
-              title="Intelligent Process Automation"
-              description="Advanced AI-powered automation that streamlines complex workflows, reduces manual intervention, and eliminates repetitive tasks across your organization."
-            />
-
-            {/* Predictive Analytics */}
-            <FlipBox
-              icon="/images/user-experience.png"
-              iconBg="bg-green-100"
-              title="Predictive Analytics & Insights"
-              description="Machine learning algorithms that analyze data patterns, predict future trends, and provide actionable insights for strategic decision-making."
-            />
-
-            {/* Cost Reduction */}
-            <FlipBox
-              icon="/images/marketing.png"
-              iconBg="bg-purple-100"
-              title="Significant Cost Reduction"
-              description="Automated processes that reduce operational costs, minimize human errors, and optimize resource allocation for maximum efficiency."
-            />
-          </div>
-
-          {/* Second Row - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-            {/* Natural Language Processing */}
-            <FlipBox
-              icon="/images/affiliate-marketing.png"
-              iconBg="bg-orange-100"
-              title="Natural Language Processing"
-              description="Advanced NLP solutions that enable human-like text understanding, sentiment analysis, and intelligent communication systems."
-            />
-
-            {/* 24/7 Operations */}
-            <FlipBox
-              icon="/images/competitive-advantage.png"
-              iconBg="bg-red-100"
-              title="24/7 Automated Operations"
-              description="Round-the-clock AI systems that continuously monitor, optimize, and maintain business processes without human intervention."
-            />
-
-            {/* Scalable AI Solutions */}
-            <FlipBox
-              icon="/images/customer-service.png"
-              iconBg="bg-teal-100"
-              title="Scalable AI Solutions"
-              description="Flexible AI architectures that grow with your business, adapting to increasing complexity and evolving automation needs."
-            />
-          </div>
-        </div>
-      </section>
-
-
-      {/* TECH STACK SECTION */}
-      <section className="w-full bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-              AI Automation Technology Stack
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Cutting-edge AI technologies and frameworks we use to build intelligent automation solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              { name: "TensorFlow", category: "ML Framework", icon: "🧠" },
-              { name: "PyTorch", category: "ML Framework", icon: "🔥" },
-              { name: "OpenAI", category: "AI Platform", icon: "🤖" },
-              { name: "Azure AI", category: "Cloud AI", icon: "☁️" },
-              { name: "Python", category: "Programming", icon: "🐍" },
-              { name: "RPA", category: "Automation", icon: "⚙️" },
-              { name: "Dialogflow", category: "NLP", icon: "�" },
-              { name: "AWS SageMaker", category: "ML Platform", icon: "🔧" },
-              { name: "Google Cloud AI", category: "Cloud AI", icon: "🌩️" },
-              { name: "IBM Watson", category: "AI Platform", icon: "🧬" },
-              { name: "UiPath", category: "RPA", icon: "🎯" },
-              { name: "Hugging Face", category: "NLP", icon: "🤗" }
-            ].map((tech, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">{tech.icon}</span>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">{tech.name}</h3>
-                <p className="text-sm text-gray-500">{tech.category}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CLIENT LOGOS SECTION */}
-      <section className="w-full bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-              Trusted by Leading AI-Driven Companies
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We've helped businesses across various industries transform their operations with our AI automation solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3  items-center">
-            {[
-              { name: "Site Invention", logo: "/images/logo.jpeg" },
-              { name: "TRIVEXON", logo: "/clients/trivexon.png" },
-              { name: "SKILLNOXERA", logo: "/clients/skillnoxera.png" },
-
-            ].map((client, index) => (
-              <div key={index} className="flex items-center justify-center">
-                <div className="w-52 h-40 bg-white rounded-lg shadow-sm flex items-center justify-center hover:shadow-md transition-shadow duration-300 border border-gray-100 mx-auto">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-w-full max-h-full object-contain"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="hidden items-center justify-center w-full h-full">
-                    <div className="text-center">
-                      <div className="text-2xl mb-1">🏢</div>
-                      <div className="text-xs font-medium text-gray-600">{client.name}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="w-full bg-white py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-              Ready to Transform Your Business with
-              <br /> Professional AI Automation?
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Implement intelligent automation solutions that streamline workflows, reduce costs, and drive innovation across your organization.
-            </p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
-              Get Free AI Automation Consultation
-            </button>
-          </div>
-
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="w-full h-full bg-no-repeat bg-center opacity-10"
-              style={{
-                backgroundImage: "url('/images/dot-grid.png')",
-                backgroundSize: "50px 50px",
-              }}
-            ></div>
-          </div>
-        </div>
-      </section>
-
-    </>
-  );
-}
-
-/* Flip Box Component */
-function FlipBox({ icon, iconBg, title, description }) {
-  return (
-    <div className="group relative  h-65 perspective-1000">
-      <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
-        {/* Front Side */}
-        <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-8">
-          <div className="text-center h-full flex flex-col justify-center">
-            <div className={`w-20 h-20 mx-auto mb-6 ${iconBg} rounded-full flex items-center justify-center`}>
-              <img src={icon} alt={title} className="w-12 h-12" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">{title}</h3>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              {description.substring(0, 100)}...
-            </p>
-
-          </div>
-        </div>
-
-        {/* Back Side */}
-        <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-blue-500 rounded-xl shadow-lg p-8">
-          <div className="text-center h-full flex flex-col justify-center">
-            <h3 className="text-xl font-bold text-white mb-6">{title}</h3>
-            <p className="text-white leading-relaxed">
-              {description}
-            </p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* Step Card */
-function Step({ step, title, logo, color, className = "" }) {
-  return (
-    <div className={`flex flex-col items-center text-center w-44 ${className}`}>
-      <span className="text-sm font-semibold text-blue-600 mb-3">
-        {step}
-      </span>
-
-      <div
-        className={`w-20 h-25 flex items-center justify-center rounded-xl shadow-md ${color}`}
-      >
-        <img
-          src={logo}
-          alt={title}
-          className="w-10 h-10 object-contain"
-        />
-      </div>
-
-      <p className="mt-4 text-sm font-medium text-gray-700 leading-snug">
-        {title}
-      </p>
-    </div>
-  );
-}
-
-function WebDesignProcess() {
-  return (
-    <section className="w-full bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center relative">
-
-        {/* Heading */}
-        <h2 className="text-4xl font-semibold text-[#243B6B] mb-24">
-          Our AI Automation Process at
-          <span className="font-bold"> Site Invention</span>
-        </h2>
-
-        {/* Arc Line */}
-        <div className="absolute left-1/2 top-[220px] -translate-x-1/2 w-[85%] h-[200px] border-t border-dashed border-gray-800 rounded-t-full" />
-
-        {/* Steps */}
-        <div className="relative flex justify-between items-start">
-
-          {/* STEP 1 */}
-          <Step
-            step="STEP 1"
-            title="AI Strategy & Assessment"
-            logo="/images/ser1.png"
-            color="bg-orange-50 text-orange-500"
-            className="mt-40"
-          />
-
-          {/* STEP 2 */}
-          <Step
-            step="STEP 2"
-            title="Process Analysis & Design"
-            logo="/images/ser2.png"
-            color="bg-blue-50 text-blue-500"
-            className="mt-10"
-          />
-
-          {/* STEP 3 */}
-          <Step
-            step="STEP 3"
-            title="AI Model Development"
-            logo="/images/ser3.png"
-            color="bg-green-50 text-green-500"
-            className="-mt-10"
-          />
-
-          {/* STEP 4 */}
-          <Step
-            step="STEP 4"
-            title="Integration & Testing"
-            logo="/images/ser4.png"
-            color="bg-sky-50 text-sky-500"
-            className="mt-10"
-          />
-
-          {/* STEP 5 */}
-          <Step
-            step="STEP 5"
-            title="Deployment & Optimization"
-            logo="/images/ser5.png"
-            color="bg-pink-50 text-pink-500"
-            className="mt-40"
-          />
-
-        </div>
-      </div>
-    </section>
+    <ServicePage
+      badge="AI Automation"
+      title='Automate Everything. <span class="text-gradient">Scale Without Limits.</span>'
+      description="We build intelligent AI automation systems that eliminate repetitive tasks, accelerate workflows, and free your team to focus on what actually moves the needle."
+      accentColor="#F59E0B"
+      heroIcon={<Bot className="w-full h-full" />}
+      stats={[
+        { value: "70%", label: "Time Saved on Tasks" },
+        { value: "10x", label: "Faster Processing" },
+        { value: "24/7", label: "Runs Autonomously" },
+      ]}
+      overview={{
+        heading: 'AI That Works <span class="text-gradient">While You Sleep</span>',
+        paragraphs: [
+          "Your team shouldn't be doing tasks that a machine can handle. We identify your most time-consuming, repetitive workflows and build AI systems that replace them — completely, reliably, and at scale.",
+          "From email triage and lead qualification to document processing and reporting automation, we design end-to-end AI pipelines that plug into your existing tools and run without supervision.",
+        ],
+      }}
+      benefits={[
+        "Automated lead qualification and CRM data entry",
+        "AI-powered email drafting, sorting, and auto-responses",
+        "Document processing and data extraction (OCR + AI)",
+        "Automated reporting and KPI dashboards",
+        "Social media content scheduling and repurposing",
+        "Customer support ticket triage and auto-resolution",
+      ]}
+      features={[
+        { icon: Mail, title: "Email Automation", desc: "AI reads, classifies, drafts responses, and triages your email inbox automatically.", color: "#F59E0B" },
+        { icon: MessageSquare, title: "AI Chatbots", desc: "Intelligent chatbots trained on your knowledge base for web, WhatsApp, and Slack.", color: "#7C3AED" },
+        { icon: Database, title: "Data Extraction", desc: "OCR + LLM pipelines to extract structured data from PDFs, invoices, contracts, and forms.", color: "#06B6D4" },
+        { icon: RefreshCw, title: "Workflow Automation", desc: "Multi-step automation flows connecting your CRM, email, Slack, sheets, and more.", color: "#10B981" },
+        { icon: BarChart2, title: "Automated Reporting", desc: "AI-generated weekly reports, summaries, and insights delivered to your inbox.", color: "#F472B6" },
+        { icon: Zap, title: "Lead Qualification", desc: "AI scores and qualifies inbound leads, then routes them to the right sales rep.", color: "#EF4444" },
+        { icon: Globe, title: "Social Media AI", desc: "Auto-generate, schedule, and repurpose content across LinkedIn, Instagram, and Twitter.", color: "#A855F7" },
+        { icon: Settings, title: "Custom AI Pipelines", desc: "End-to-end orchestrated AI workflows with LLM chains, vector search, and actions.", color: "#F59E0B" },
+        { icon: Shield, title: "Secure Data Handling", desc: "All automation processes handle your business data with enterprise-grade security.", color: "#10B981" },
+      ]}
+      process={[
+        { title: "Automation Audit", desc: "We map your current workflows and identify the highest-ROI automation opportunities." },
+        { title: "Solution Design", desc: "Architecture of AI agents, tools, triggers, and data flows for each automation." },
+        { title: "Prototype & Test", desc: "Build a working prototype with real data and validate accuracy before scaling." },
+        { title: "Integration", desc: "Connect the automation to your existing tools — CRM, email, Slack, databases, APIs." },
+        { title: "Deployment", desc: "Production-grade deployment with error handling, retry logic, and monitoring." },
+        { title: "Monitoring & Iteration", desc: "Dashboard to track automation performance and regular updates as your needs evolve." },
+      ]}
+      techStack={[
+        { icon: "🧠", name: "GPT-4o", tag: "LLM" },
+        { icon: "🔗", name: "LangChain", tag: "Orchestration" },
+        { icon: "🗃️", name: "Pinecone", tag: "Vector DB" },
+        { icon: "⚡", name: "Make.com", tag: "Automation" },
+        { icon: "🔀", name: "n8n", tag: "Workflow" },
+        { icon: "📝", name: "Zapier", tag: "Integration" },
+        { icon: "🐍", name: "Python", tag: "Backend" },
+        { icon: "🔌", name: "REST APIs", tag: "Integration" },
+      ]}
+      faq={[
+        { q: "What kinds of tasks can AI automation replace?", a: "Any repetitive, rule-based or pattern-matching task: email triage, data entry, report generation, lead scoring, document processing, and review summarisation." },
+        { q: "How long does AI automation setup take?", a: "Simple automations (email sorting, chatbot) take 1–2 weeks. Complex multi-step agent pipelines take 4–8 weeks." },
+        { q: "Will the AI make mistakes?", a: "All automations include human-review gates for high-stakes decisions. We also build in error detection, alerts, and fallback logic." },
+        { q: "Does it integrate with our existing tools?", a: "Yes — we integrate with virtually any tool that has an API: Salesforce, HubSpot, Notion, Google Workspace, Slack, and more." },
+      ]}
+    />
   );
 }

@@ -1,110 +1,105 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ExternalLink } from "lucide-react";
+
+const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    category: "Web Development",
+    image: "/images/project.png",
+    link: "/project",
+    accent: "#7C3AED",
+  },
+  {
+    id: 2,
+    title: "Mobile Banking App",
+    category: "UI/UX Design",
+    image: "/images/project.png",
+    link: "/project",
+    accent: "#06B6D4",
+  },
+  {
+    id: 3,
+    title: "CRM Dashboard",
+    category: "ERP/CRM Dev",
+    image: "/images/hero.png",
+    link: "/project",
+    accent: "#F472B6",
+  },
+];
 
 export default function PortfolioSection() {
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      image: "/images/project.png",
-      link: "#"
-    },
-    {
-      id: 2,
-      title: "Mobile Banking App",
-      category: "Mobile Development",
-      image: "/images/project.png",
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "CRM Dashboard",
-      category: "Web Development",
-      image: "/images/hero.png",
-      link: "#"
-    },
-   
-  ];
-
   return (
-    <section className="py-16 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-[#0A0F1E] overflow-hidden">
+      {/* Decorations */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+      <div className="orb orb-cyan w-[400px] h-[400px] top-0 left-0 opacity-15 blur-[130px]" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-[#2563EB] uppercase tracking-wide font-semibold text-sm mb-4">OUR PROJECTS</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-            Our Latest Projects
-          </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto">
-            Explore our recent work and see how we've helped businesses achieve their digital goals
-          </p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-14">
+          <div>
+            <div className="flex mb-4">
+              <span className="section-badge">Our Projects</span>
+            </div>
+            <h2 className="section-title">
+              Work That <span className="text-gradient">Speaks</span>
+            </h2>
+          </div>
+          <Link to="/project" className="btn-outline flex-shrink-0">
+            View All Projects
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <div
+            <Link
               key={project.id}
-              className="group relative overflow-hidden rounded-xl border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              to={project.link}
+              className="group glass-card-hover card-shine rounded-2xl overflow-hidden block"
             >
-              {/* Project Image */}
-              <div className="relative h-84 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] via-transparent to-transparent opacity-70" />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Category badge */}
+                <div
+                  className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-[Outfit] font-semibold text-white"
+                  style={{ background: project.accent + '33', border: `1px solid ${project.accent}55` }}
+                >
+                  {project.category}
+                </div>
 
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-red-800 text-xs font-semibold rounded-full">
-                    {project.category}
-                  </span>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                    <ExternalLink className="w-5 h-5 text-white" />
+                  </div>
                 </div>
               </div>
 
-              {/* Project Info */}
-              <div className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-[#0F172A] mb-2 group-hover:text-[#2563EB] transition-colors">
+              {/* Info */}
+              <div className="p-6">
+                <h3 className="font-[Outfit] font-bold text-lg text-white mb-1 group-hover:text-violet-300 transition-colors">
                   {project.title}
                 </h3>
-
-                {/* View Project Link */}
-                <a
-                  href={project.link}
-                  className="inline-flex items-center text-[#2563EB] hover:text-[#1d4ed8] font-semibold transition-colors duration-200"
-                >
-                  View Project
-                  <svg
-                    className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                <div className="flex items-center gap-2 mt-3" style={{ color: project.accent }}>
+                  <span className="text-sm font-[Outfit] font-semibold">View Project</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
-        </div>
-
-        {/* More Projects Button */}
-        <div className="text-center">
-          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white font-semibold px-8 py-4 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105">
-            More Projects
-            <svg
-              className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
         </div>
       </div>
     </section>

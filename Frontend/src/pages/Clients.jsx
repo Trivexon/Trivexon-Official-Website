@@ -1,129 +1,193 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Star, CheckCircle, Handshake, Clock, Shield } from "lucide-react";
 
-const realClients = [
+const clients = [
   {
     name: "ABC Healthcare",
     industry: "Healthcare Technology",
-    engagementType: "Web Application Development",
-    description: "Healthcare management system for streamlined patient workflows"
+    service: "Web Application Development",
+    description: "Built a comprehensive healthcare management system that streamlined patient workflows and appointment scheduling for a growing clinic chain.",
+    avatar: "AH",
+    color: "#10B981",
+    tags: ["React", "Node.js", "HIPAA"],
   },
   {
     name: "EduNext Solutions",
     industry: "EdTech Platform",
-    engagementType: "Full-Stack Development & UI/UX Design",
-    description: "Learning platform with role-based access for students and administrators"
-  }
+    service: "Full-Stack Dev & UI/UX Design",
+    description: "Designed and developed a feature-rich learning management system with role-based access for students, teachers, and administrators.",
+    avatar: "EN",
+    color: "#7C3AED",
+    tags: ["LMS", "React", "AI"],
+  },
+  {
+    name: "RetailPro Corp",
+    industry: "Retail & E-Commerce",
+    service: "ERP/CRM Development",
+    description: "Unified sales, inventory, and HR operations into a single enterprise platform, improving efficiency by over 40% in the first quarter.",
+    avatar: "RP",
+    color: "#F472B6",
+    tags: ["ERP", "CRM", "API"],
+  },
+  {
+    name: "Prestige Realty",
+    industry: "Real Estate",
+    service: "Web Design & SEO",
+    description: "Created a stunning luxury real estate website with immersive property tours, advanced search, and a lead-generation funnel.",
+    avatar: "PR",
+    color: "#FBBF24",
+    tags: ["WordPress", "SEO", "Design"],
+  },
+  {
+    name: "CloudBridge Logistics",
+    industry: "Logistics & Supply Chain",
+    service: "AI Automation & Dashboard",
+    description: "Implemented AI-powered route optimization and real-time shipment tracking, reducing delivery costs by 25%.",
+    avatar: "CB",
+    color: "#06B6D4",
+    tags: ["AI", "Automation", "Cloud"],
+  },
+  {
+    name: "FinEdge Investments",
+    industry: "Financial Services",
+    service: "Secure Web Application",
+    description: "Developed a secure, SEBI-compliant investment tracking dashboard with multi-factor authentication and real-time portfolio analytics.",
+    avatar: "FE",
+    color: "#A855F7",
+    tags: ["Security", "FinTech", "Dashboard"],
+  },
 ];
 
 const processSteps = [
-  {
-    step: "01",
-    title: "Discovery & Strategy",
-    description: "We start by understanding your business goals, target audience, and technical requirements through in-depth consultations."
-  },
-  {
-    step: "02",
-    title: "Planning & Design",
-    description: "Creating detailed project roadmaps, wireframes, and designs that align with your vision and business objectives."
-  },
-  {
-    step: "03",
-    title: "Development & Testing",
-    description: "Building robust, scalable solutions with comprehensive testing to ensure quality and performance."
-  },
-  {
-    step: "04",
-    title: "Launch & Support",
-    description: "Deploying your solution and providing ongoing support to ensure continued success and growth."
-  },
-  {
-    step: "05",
-    title: "Optimization & Growth",
-    description: "Continuously monitoring and optimizing performance to help your business scale and evolve."
-  }
+  { step: "01", title: "Discovery & Strategy", desc: "We deep-dive into your goals, audience, and requirements through structured consultations.", color: "#7C3AED" },
+  { step: "02", title: "Planning & Design", desc: "Detailed roadmaps, wireframes, and UI designs aligned with your vision and brand identity.", color: "#06B6D4" },
+  { step: "03", title: "Development & Testing", desc: "Robust, scalable builds with rigorous QA testing to ensure performance and reliability.", color: "#F472B6" },
+  { step: "04", title: "Launch & Support", desc: "Smooth deployment with post-launch monitoring and dedicated support from day one.", color: "#FBBF24" },
+  { step: "05", title: "Optimize & Scale", desc: "Continuous performance tuning and feature evolution as your business grows.", color: "#10B981" },
 ];
 
-const industries = [
-  {
-    title: "Startups",
-    description: "Early-stage companies building their digital foundation",
-    icon: "🚀"
-  },
-  {
-    title: "Small Businesses",
-    description: "Growing businesses needing scalable digital solutions",
-    icon: "📈"
-  },
-  {
-    title: "Early-Stage Products",
-    description: "MVPs and prototypes ready for market validation",
-    icon: "💡"
-  }
+const idealFor = [
+  { icon: "🚀", title: "Startups", desc: "Early-stage companies building their digital foundation and launching to market." },
+  { icon: "📈", title: "Growing Businesses", desc: "Scaling companies that need reliable, high-performance digital platforms." },
+  { icon: "💡", title: "Product Companies", desc: "MVPs, SaaS products, and tech platforms ready for market validation." },
+  { icon: "🏢", title: "Enterprises", desc: "Large organizations needing custom ERP, CRM, and AI automation solutions." },
+];
+
+const stats = [
+  { value: "50+", label: "Happy Clients", desc: "Across 12+ industries", icon: "🤝" },
+  { value: "200+", label: "Projects Done", desc: "On time & on budget", icon: "✅" },
+  { value: "100%", label: "Satisfaction", desc: "Guaranteed quality", icon: "⭐" },
+  { value: "5+", label: "Years Active", desc: "Proven track record", icon: "🏆" },
 ];
 
 export default function Clients() {
   return (
-    <section className="w-full bg-white min-h-screen">
+    <div className="bg-[#050711]">
 
-      {/* HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-white py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Building Lasting
-              <span className="text-blue-600"> Partnerships</span>
+      {/* ===== PAGE HERO ===== */}
+      <section className="relative min-h-[55vh] flex items-center overflow-hidden bg-[#050711]">
+        <div className="absolute inset-0 hero-grid opacity-30" />
+        <div className="orb orb-violet w-[500px] h-[500px] top-0 left-0 opacity-30 blur-[120px]" />
+        <div className="orb orb-pink w-[350px] h-[350px] bottom-0 right-0 opacity-20 blur-[100px]" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <span className="section-badge">Our Clients</span>
+            </div>
+            <h1 className="font-[Outfit] font-black text-5xl lg:text-7xl text-white leading-tight mb-6">
+              Building Lasting <span className="text-gradient">Partnerships</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              We believe in collaborative relationships that drive real business results.
-              Our clients are our partners, and their success is our success.
+            <p className="section-desc mb-8">
+              We believe the best work happens through genuine collaboration. Our clients aren't just customers — they're long-term partners whose success we're deeply invested in.
             </p>
-            <div className="inline-flex items-center gap-2 text-sm text-gray-500 bg-gray-100 px-4 py-2 rounded-full">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 glass-card px-5 py-2.5 rounded-full text-sm font-[Outfit] text-slate-300">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               Currently accepting new client partnerships
             </div>
           </div>
         </div>
       </section>
 
-      {/* CLIENTS WE'VE WORKED WITH */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Clients We've Worked With
+      {/* ===== STATS ===== */}
+      <section className="relative py-16 bg-[#0A0F1E]">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            {stats.map((s, i) => (
+              <div key={i} className="glass-card-hover card-shine rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">{s.icon}</div>
+                <p className="stat-number text-4xl font-black">{s.value}</p>
+                <p className="font-[Outfit] font-bold text-white text-sm mt-1">{s.label}</p>
+                <p className="text-slate-500 text-xs font-[Inter] mt-1">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CLIENTS WE'VE WORKED WITH ===== */}
+      <section className="relative py-24 bg-[#050711] overflow-hidden">
+        <div className="absolute inset-0 dots-bg opacity-20" />
+        <div className="orb orb-cyan w-[400px] h-[400px] top-0 right-0 opacity-15 blur-[130px]" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="flex justify-center mb-5">
+              <span className="section-badge">Clients</span>
+            </div>
+            <h2 className="section-title mb-4">
+              Who We've <span className="text-gradient">Worked With</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Proud to have partnered with innovative companies across different industries
+            <p className="section-desc max-w-xl mx-auto">
+              Proud to have partnered with innovative companies across industries and geographies.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {realClients.map((client, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {clients.map((client, i) => (
               <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                key={i}
+                className="group glass-card-hover card-shine rounded-2xl p-6 flex flex-col"
               >
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {client.name}
-                  </h3>
-                  <p className="text-blue-600 font-medium mb-1">
-                    {client.industry}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {client.engagementType}
-                  </p>
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-5">
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center font-[Outfit] font-black text-lg text-white flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: `linear-gradient(135deg, ${client.color}, ${client.color}88)` }}
+                  >
+                    {client.avatar}
+                  </div>
+                  <div>
+                    <h3 className="font-[Outfit] font-bold text-white text-base group-hover:text-violet-300 transition-colors">{client.name}</h3>
+                    <p className="text-xs font-[Inter]" style={{ color: client.color }}>{client.industry}</p>
+                    <p className="text-slate-500 text-xs font-[Inter]">{client.service}</p>
+                  </div>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed">
+                {/* Description */}
+                <p className="text-slate-400 text-sm leading-relaxed font-[Inter] flex-1 mb-5">
                   {client.description}
                 </p>
 
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <div className="flex items-center text-sm text-gray-500">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                    Successfully delivered
-                  </div>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {client.tags.map(tag => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-0.5 rounded-full font-[Outfit]"
+                      style={{ background: client.color + '18', color: client.color }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Footer */}
+                <div className="pt-4 border-t border-[rgba(255,255,255,0.06)] flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  <span className="text-green-400 text-xs font-[Outfit] font-medium">Successfully Delivered</span>
                 </div>
               </div>
             ))}
@@ -131,169 +195,129 @@ export default function Clients() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our Track Record
+      {/* ===== HOW WE WORK ===== */}
+      <section className="relative py-24 bg-[#0A0F1E] overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+        <div className="orb orb-violet w-[400px] h-[400px] bottom-0 left-0 opacity-15 blur-[120px]" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="flex justify-center mb-5">
+              <span className="section-badge">Our Process</span>
+            </div>
+            <h2 className="section-title mb-4">
+              How We <span className="text-gradient">Work With Clients</span>
             </h2>
-            <p className="text-lg text-gray-600">
-              Numbers that reflect our commitment to excellence
+            <p className="section-desc max-w-xl mx-auto">
+              A proven 5-step framework that ensures exceptional collaboration and consistent results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center bg-white rounded-2xl p-8 border border-gray-200">
-              <div className="text-5xl font-bold text-blue-600 mb-2">2</div>
-              <div className="text-lg font-semibold text-gray-900">Happy Clients</div>
-              <div className="text-sm text-gray-500 mt-2">Long-term partnerships</div>
-            </div>
-
-            <div className="text-center bg-white rounded-2xl p-8 border border-gray-200">
-              <div className="text-5xl font-bold text-green-600 mb-2">4</div>
-              <div className="text-lg font-semibold text-gray-900">Projects Delivered</div>
-              <div className="text-sm text-gray-500 mt-2">On time and on budget</div>
-            </div>
-
-            <div className="text-center bg-white rounded-2xl p-8 border border-gray-200">
-              <div className="text-5xl font-bold text-purple-600 mb-2">100%</div>
-              <div className="text-lg font-semibold text-gray-900">On-time Delivery</div>
-              <div className="text-sm text-gray-500 mt-2">Every single project</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW WE WORK WITH CLIENTS */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              How We Work With Clients
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our proven process ensures successful collaboration and exceptional results
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {processSteps.map((step, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+            {processSteps.map((s, i) => (
               <div
-                key={index}
-                className="relative bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+                key={i}
+                className="group glass-card-hover card-shine rounded-2xl p-6 text-center relative"
               >
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                  {step.step}
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center font-[Outfit] font-black text-base mx-auto mb-4 border-2 transition-transform duration-300 group-hover:scale-110"
+                  style={{
+                    background: s.color + '15',
+                    borderColor: s.color + '50',
+                    color: s.color,
+                    boxShadow: `0 0 20px ${s.color}30`,
+                  }}
+                >
+                  {s.step}
                 </div>
-
-                <h3 className="text-lg font-bold text-gray-900 mb-3 mt-2">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {step.description}
-                </p>
+                <h3 className="font-[Outfit] font-bold text-white text-sm mb-2 group-hover:text-violet-300 transition-colors">{s.title}</h3>
+                <p className="text-slate-400 text-xs leading-relaxed font-[Inter]">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIAL SECTION */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              What Our Clients Say
-            </h2>
-          </div>
+      {/* ===== TESTIMONIAL ===== */}
+      <section className="relative py-20 bg-[#050711] overflow-hidden">
+        <div className="absolute inset-0 hero-grid opacity-20" />
 
-          <div className="bg-white rounded-2xl p-8 border border-gray-200 text-center">
-            <div className="text-4xl mb-6">"</div>
-            <p className="text-xl text-gray-700 italic mb-6 leading-relaxed">
-              Working with this team has been transformative for our business.
-              They don't just build websites—they build solutions that actually work
-              and deliver real results. The attention to detail and commitment to
-              our success has been outstanding.
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <div className="glass-card rounded-3xl p-10 border border-[rgba(124,58,237,0.2)]">
+            <div className="flex justify-center gap-1 mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              ))}
+            </div>
+            <p className="text-slate-200 text-xl leading-relaxed font-[Inter] italic mb-8">
+              "Working with Trivexon has been transformative. They don't just build websites — they build solutions that actually work and deliver real results. The attention to detail and their commitment to our success has been outstanding."
             </p>
-            <div className="font-semibold text-gray-900">
-              Sarah Johnson, CEO at ABC Healthcare
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center font-[Outfit] font-black text-white">
+                SJ
+              </div>
+              <div className="text-left">
+                <p className="font-[Outfit] font-semibold text-white">Sarah Johnson</p>
+                <p className="text-slate-500 text-sm font-[Inter]">CEO, ABC Healthcare</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* INDUSTRIES / IDEAL CLIENTS */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Who We Work With
+      {/* ===== IDEAL FOR ===== */}
+      <section className="relative py-24 bg-[#0A0F1E] overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="flex justify-center mb-5">
+              <span className="section-badge">Who We Serve</span>
+            </div>
+            <h2 className="section-title mb-4">
+              Who We <span className="text-gradient">Work With</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We specialize in helping ambitious businesses build their digital foundation
+            <p className="section-desc max-w-xl mx-auto">
+              From startups to enterprises — we specialize in building ambitious digital products.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {industries.map((industry, index) => (
-              <div
-                key={index}
-                className="text-center bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{industry.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {industry.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {industry.description}
-                </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {idealFor.map((item, i) => (
+              <div key={i} className="group glass-card-hover card-shine rounded-2xl p-7 text-center">
+                <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">{item.icon}</div>
+                <h3 className="font-[Outfit] font-bold text-white text-base mb-2 group-hover:text-violet-300 transition-colors">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-[Inter]">{item.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Whether you're launching a new product or scaling an existing business,
-              we have the expertise to help you succeed.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* CALL TO ACTION */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Become Our Next Success Story?
+      {/* ===== CTA ===== */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-950/60 via-[#07040F] to-cyan-950/40" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.1) 100%)' }} />
+
+        <div className="relative max-w-3xl mx-auto px-4 text-center">
+          <h2 className="font-[Outfit] font-black text-4xl md:text-5xl text-white mb-5">
+            Ready to Be Our Next <span className="text-gradient">Success Story?</span>
           </h2>
-          <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-            Join our growing family of satisfied clients. Let's discuss how we can
-            help bring your vision to life and build something extraordinary together.
+          <p className="section-desc mb-10">
+            Join our growing family of satisfied clients. Let's discuss how we can help bring your vision to life.
           </p>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center"
-            >
-              Start Your Project
-            </a>
-            <a
-              href="/contact"
-              className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center"
-            >
-              Schedule a Consultation
-            </a>
+            <Link to="/contact" className="btn-primary text-base px-8 py-4">
+              Start Your Project <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link to="/contact" className="btn-outline text-base px-8 py-4">
+              Schedule a Call
+            </Link>
           </div>
-
-          <div className="mt-8 text-blue-100 text-sm">
-            No pressure, no obligations—just a conversation about your goals
-          </div>
+          <p className="text-slate-500 text-sm mt-6 font-[Inter]">No pressure, no obligation — just a conversation about your goals.</p>
         </div>
       </section>
 
-    </section>
+    </div>
   );
 }
- 

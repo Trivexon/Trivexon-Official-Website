@@ -1,195 +1,423 @@
-import React from 'react';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Mail, Phone, Send, Clock, MessageSquare, Zap, CheckCircle } from 'lucide-react';
+
+const contactInfo = [
+  {
+    icon: MapPin,
+    label: "Main Office",
+    value: "Prabhadevi, Mumbai – 400028, Maharashtra, India",
+    color: "#7C3AED",
+    href: "https://maps.google.com",
+  },
+  {
+    icon: Mail,
+    label: "Email Us",
+    value: "info@trivexon.com",
+    color: "#06B6D4",
+    href: "mailto:info@trivexon.com",
+  },
+  {
+    icon: Phone,
+    label: "Call Us",
+    value: "+91 98199 22521",
+    color: "#F472B6",
+    href: "tel:+919819922521",
+  },
+  {
+    icon: Clock,
+    label: "Working Hours",
+    value: "Mon – Sat: 10:00 AM – 7:00 PM IST",
+    color: "#FBBF24",
+    href: null,
+  },
+];
+
+const services = [
+  "Web Design / Development",
+  "AI Automation",
+  "ERP / CRM Development",
+  "SEO Services",
+  "UI / UX Design",
+  "E-Commerce Website",
+  "WordPress Development",
+  "AI Agent",
+  "N8N Workflow",
+  "Other",
+];
+
+const faqs = [
+  {
+    q: "How long does a typical project take?",
+    a: "Most websites are delivered in 2–6 weeks depending on complexity. Enterprise apps typically take 2–4 months.",
+  },
+  {
+    q: "Do you offer free consultations?",
+    a: "Yes! We offer a free 30-minute discovery call to understand your project and provide a no-obligation quote.",
+  },
+  {
+    q: "Do you provide post-launch support?",
+    a: "Absolutely. All our packages include free maintenance for the first 3 months, with ongoing support plans available.",
+  },
+];
 
 const Contact = () => {
+  const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <section className="w-full bg-white relative overflow-hidden" style={{ padding: '0px 0px 50px 0px' }}>
-      {/* Mountain wave divider at bottom */}
-      <div className="absolute bottom-0 left-0 w-full  overflow-hidden leading-none" style={{ transform: 'rotate(180deg)' }}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" className="w-full h-20 ">
-          <path fill="#6EC1E4" fillOpacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"></path>
-          <path fill="#6EC1E4" fillOpacity="0.66" d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"></path>
-          <path fill="#6EC1E4" d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"></path>
-        </svg>
-      </div>
+    <div className="bg-[#050711]">
 
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* ===== PAGE HERO ===== */}
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#050711]">
+        <div className="absolute inset-0 hero-grid opacity-30" />
+        <div className="orb orb-violet w-[500px] h-[500px] top-0 left-0 opacity-30 blur-[120px]" />
+        <div className="orb orb-cyan w-[400px] h-[400px] bottom-0 right-0 opacity-20 blur-[120px]" />
 
-          {/* Left Content */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif', color: '#243B69' }}>
-                Contact Us
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"></div>
-            </div>
-
-            <p className="text-lg leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif', color: '#243B69', textAlign: 'left' }}>
-              We understand the importance of approaching each work integrally and believe in the power of simple and easy communication.
-            </p>
-
-
-
-          </div>
-
-          {/* Right Image */}
-          <div className="flex justify-end items-center lg:pr-8">
-            <div className="w-full max-w-xl -mr-42">
-              <img
-                src="https://siteinvention.com/wp-content/uploads/2022/02/banner-img.png"
-                alt="contact with us"
-                className="w-full h-auto lg:h-120 object-cover rounded-lg "
-                loading="eager"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Section Below Mountain Wave */}
-      {/* <section className="w-full bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
-        
-          <div>
-            <span className="text-blue-600 tracking-widest text-sm font-semibold">
-              --- CONTACT US
-            </span>
-            <h2 className="text-4xl font-bold text-slate-800 mt-3 mb-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full text-center">
+          <div className="flex justify-center mb-6">
+            <span className="section-badge">
+              <MessageSquare className="w-3.5 h-3.5" />
               Get In Touch
-            </h2>
-
-         
-            <div className="flex gap-5 mb-8">
-              <div className="text-blue-500">
-                <MapPin size={28} />
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg">Main Office Address:</h4>
-                <p className="text-slate-600 leading-relaxed mt-1">
-                  Office No. 632, 6th Floor, EssGee Option One,<br />
-                  Opp. Naman Midtown, Next to Tilak Bhavan,<br />
-                  S.B. Road, Prabhadevi, Mumbai – 400028.
-                </p>
-              </div>
-            </div>
-
-           
-            <div className="flex gap-5 mb-8">
-              <div className="text-blue-500">
-                <MapPin size={28} />
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg">Branch Address:</h4>
-                <p className="text-slate-600 leading-relaxed mt-1">
-                  R.No.103, 1st Floor, Shivram Nagar, 1458/0,<br />
-                  nr. Achal Guru Temple, Kamatghar,<br />
-                  Bhiwandi, Maharashtra 421302.
-                </p>
-              </div>
-            </div>
-
-            
-            <div className="flex gap-5 mb-8">
-              <div className="text-blue-500">
-                <Mail size={26} />
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg">Mail Us:</h4>
-                <p className="text-slate-600 mt-1">
-                  info@siteinvention.com / rajesh@siteinvention.com
-                </p>
-              </div>
-            </div>
-
-          
-            <div className="flex gap-5">
-              <div className="text-blue-500">
-                <Phone size={26} />
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg">Phone:</h4>
-                <p className="text-slate-600 mt-1">
-                  +91-9819922521 / +91-9664511162 / +91-9819922044
-                </p>
-              </div>
-            </div>
+            </span>
           </div>
-
-         
-          <div className="bg-white rounded-2xl shadow-xl p-10">
-            <h3 className="text-2xl font-bold text-slate-800 mb-8">
-              Drop us a line!
-            </h3>
-
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Your Name*"
-                  className="w-full bg-slate-100 rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <input
-                  type="email"
-                  placeholder="Your E-Mail*"
-                  className="w-full bg-slate-100 rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <input
-                type="text"
-                placeholder="Contact No."
-                className="w-full bg-slate-100 rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
-              />
-
-              <input
-                type="text"
-                placeholder="Company Name"
-                className="w-full bg-slate-100 rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
-              />
-
-              <textarea
-                rows="5"
-                placeholder="Briefly tell us about your project"
-                className="w-full bg-slate-100 rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
-              />
-
-              <button
-                type="submit"
-                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg"
-              >
-                SUBMIT NOW
-              </button>
-            </form>
+          <h1 className="font-[Outfit] font-black text-5xl lg:text-7xl text-white leading-tight mb-6">
+            Let's Build Something<br />
+            <span className="text-gradient">Great Together</span>
+          </h1>
+          <p className="section-desc max-w-2xl mx-auto mb-8">
+            Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you within 24 hours.
+          </p>
+          <div className="inline-flex items-center gap-2 glass-card px-5 py-2.5 rounded-full text-sm font-[Outfit] text-slate-300">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            Typically responds within 2–4 hours
           </div>
         </div>
-      </section> */}
+      </section>
 
+      {/* ===== CONTACT INFO CARDS ===== */}
+      <section className="relative py-14 bg-[#0A0F1E]">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {contactInfo.map((item, i) => (
+              <div key={i} className="group glass-card-hover card-shine rounded-2xl p-6">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: item.color + '18', border: `1px solid ${item.color}33` }}
+                >
+                  <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                </div>
+                <p className="text-slate-500 text-xs font-[Outfit] uppercase tracking-widest mb-1">{item.label}</p>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="text-slate-200 text-sm font-[Inter] leading-relaxed hover:text-violet-400 transition-colors"
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="text-slate-200 text-sm font-[Inter] leading-relaxed">{item.value}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* ===== MAIN CONTACT SECTION ===== */}
+      <section className="relative py-20 bg-[#050711] overflow-hidden">
+        <div className="absolute inset-0 dots-bg opacity-15" />
+        <div className="orb orb-violet w-[400px] h-[400px] bottom-0 left-1/4 opacity-15 blur-[120px]" />
 
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-12">
 
+            {/* Left Panel */}
+            <div className="lg:col-span-2 flex flex-col gap-8">
 
+              {/* Why work with us */}
+              <div className="glass-card rounded-2xl p-7 border border-[rgba(124,58,237,0.15)]">
+                <h3 className="font-[Outfit] font-bold text-white text-xl mb-5">
+                  Why Work With <span className="text-gradient">Trivexon?</span>
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Free 30-min strategy consultation",
+                    "Detailed project proposal within 48h",
+                    "Fixed-price quotes — no surprises",
+                    "Dedicated project manager assigned",
+                    "Post-launch support included",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="w-4 h-4 text-violet-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-300 text-sm font-[Inter]">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
+              {/* Quick response */}
+              <div
+                className="rounded-2xl p-7 relative overflow-hidden"
+                style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.25) 0%, rgba(6,182,212,0.15) 100%)', border: '1px solid rgba(124,58,237,0.25)' }}
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-violet-500/10 blur-2xl" />
+                <Zap className="w-8 h-8 text-yellow-400 mb-3" />
+                <h4 className="font-[Outfit] font-bold text-white text-lg mb-2">Quick Response</h4>
+                <p className="text-slate-300 text-sm font-[Inter] leading-relaxed">
+                  We take every inquiry seriously. Expect a detailed response from our team within 2–4 business hours.
+                </p>
+                <div className="mt-4 flex items-center gap-2">
+                  <div className="flex">
+                    {["VM", "RS", "PS"].map((a, i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full border-2 border-[#050711] flex items-center justify-center font-[Outfit] font-bold text-xs text-white -ml-2 first:ml-0"
+                        style={{ background: ['#7C3AED', '#06B6D4', '#F472B6'][i] }}
+                      >
+                        {a}
+                      </div>
+                    ))}
+                  </div>
+                  <span className="text-slate-400 text-xs font-[Inter]">Our team is ready to help</span>
+                </div>
+              </div>
 
+              {/* FAQ */}
+              <div className="glass-card rounded-2xl p-7 border border-[rgba(124,58,237,0.15)]">
+                <h4 className="font-[Outfit] font-bold text-white text-base mb-5">Quick FAQs</h4>
+                <div className="space-y-3">
+                  {faqs.map((faq, i) => (
+                    <div key={i} className="border border-[rgba(255,255,255,0.06)] rounded-xl overflow-hidden">
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 hover:bg-[rgba(124,58,237,0.06)] transition-colors"
+                      >
+                        <span className="text-slate-200 text-sm font-[Outfit] font-medium">{faq.q}</span>
+                        <span className={`text-violet-400 font-bold text-lg flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-45' : ''}`}>+</span>
+                      </button>
+                      {openFaq === i && (
+                        <div className="px-4 pb-3">
+                          <p className="text-slate-400 text-xs font-[Inter] leading-relaxed">{faq.a}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
+            {/* Right — Contact Form */}
+            <div className="lg:col-span-3">
+              <div className="glass-card rounded-3xl p-8 md:p-10 border border-[rgba(124,58,237,0.15)]">
+                {!submitted ? (
+                  <>
+                    <h2 className="font-[Outfit] font-black text-2xl text-white mb-2">
+                      Send Us a Message
+                    </h2>
+                    <p className="text-slate-400 text-sm font-[Inter] mb-8">
+                      Fill in the form below and we'll get back to you with a free quote and strategy.
+                    </p>
 
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      {/* Name + Email */}
+                      <div className="grid md:grid-cols-2 gap-5">
+                        <div>
+                          <label className="text-xs font-[Outfit] font-semibold text-slate-400 uppercase tracking-widest block mb-2">Your Name *</label>
+                          <input
+                            type="text"
+                            name="name"
+                            value={form.name}
+                            onChange={handleChange}
+                            required
+                            placeholder="Vivek Maurya"
+                            className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white placeholder-slate-600 outline-none transition-all duration-200"
+                            style={{
+                              background: 'rgba(255,255,255,0.04)',
+                              border: '1px solid rgba(255,255,255,0.08)',
+                            }}
+                            onFocus={e => { e.target.style.borderColor = 'rgba(124,58,237,0.6)'; e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.12)'; }}
+                            onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.boxShadow = 'none'; }}
+                          />
+                        </div>
+                        <div>
+                          <label className="text-xs font-[Outfit] font-semibold text-slate-400 uppercase tracking-widest block mb-2">Email Address *</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            required
+                            placeholder="you@company.com"
+                            className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white placeholder-slate-600 outline-none transition-all duration-200"
+                            style={{
+                              background: 'rgba(255,255,255,0.04)',
+                              border: '1px solid rgba(255,255,255,0.08)',
+                            }}
+                            onFocus={e => { e.target.style.borderColor = 'rgba(124,58,237,0.6)'; e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.12)'; }}
+                            onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.boxShadow = 'none'; }}
+                          />
+                        </div>
+                      </div>
 
+                      {/* Phone + Company */}
+                      <div className="grid md:grid-cols-2 gap-5">
+                        <div>
+                          <label className="text-xs font-[Outfit] font-semibold text-slate-400 uppercase tracking-widest block mb-2">Phone Number</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={form.phone}
+                            onChange={handleChange}
+                            placeholder="+91 98765 43210"
+                            className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white placeholder-slate-600 outline-none transition-all duration-200"
+                            style={{
+                              background: 'rgba(255,255,255,0.04)',
+                              border: '1px solid rgba(255,255,255,0.08)',
+                            }}
+                            onFocus={e => { e.target.style.borderColor = 'rgba(124,58,237,0.6)'; e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.12)'; }}
+                            onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.boxShadow = 'none'; }}
+                          />
+                        </div>
+                        <div>
+                          <label className="text-xs font-[Outfit] font-semibold text-slate-400 uppercase tracking-widest block mb-2">Company Name</label>
+                          <input
+                            type="text"
+                            name="company"
+                            value={form.company}
+                            onChange={handleChange}
+                            placeholder="Your Company Ltd."
+                            className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white placeholder-slate-600 outline-none transition-all duration-200"
+                            style={{
+                              background: 'rgba(255,255,255,0.04)',
+                              border: '1px solid rgba(255,255,255,0.08)',
+                            }}
+                            onFocus={e => { e.target.style.borderColor = 'rgba(124,58,237,0.6)'; e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.12)'; }}
+                            onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.boxShadow = 'none'; }}
+                          />
+                        </div>
+                      </div>
 
+                      {/* Service dropdown */}
+                      <div>
+                        <label className="text-xs font-[Outfit] font-semibold text-slate-400 uppercase tracking-widest block mb-2">Service Interested In</label>
+                        <select
+                          name="service"
+                          value={form.service}
+                          onChange={handleChange}
+                          className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white outline-none transition-all duration-200 appearance-none cursor-pointer"
+                          style={{
+                            background: 'rgba(255,255,255,0.04)',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                            color: form.service ? 'white' : '#64748b',
+                          }}
+                          onFocus={e => { e.target.style.borderColor = 'rgba(124,58,237,0.6)'; e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.12)'; }}
+                          onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.boxShadow = 'none'; }}
+                        >
+                          <option value="" disabled style={{ background: '#0A0F1E', color: '#64748b' }}>Select a service...</option>
+                          {services.map(s => (
+                            <option key={s} value={s} style={{ background: '#0A0F1E', color: 'white' }}>{s}</option>
+                          ))}
+                        </select>
+                      </div>
 
+                      {/* Message */}
+                      <div>
+                        <label className="text-xs font-[Outfit] font-semibold text-slate-400 uppercase tracking-widest block mb-2">Your Message *</label>
+                        <textarea
+                          name="message"
+                          value={form.message}
+                          onChange={handleChange}
+                          required
+                          rows={5}
+                          placeholder="Tell us about your project, goals, timeline, and budget..."
+                          className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white placeholder-slate-600 outline-none resize-none transition-all duration-200"
+                          style={{
+                            background: 'rgba(255,255,255,0.04)',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                          }}
+                          onFocus={e => { e.target.style.borderColor = 'rgba(124,58,237,0.6)'; e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.12)'; }}
+                          onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.boxShadow = 'none'; }}
+                        />
+                      </div>
 
+                      {/* Submit */}
+                      <button
+                        type="submit"
+                        className="btn-primary w-full justify-center text-base py-4"
+                      >
+                        Send Message
+                        <Send className="w-5 h-5" />
+                      </button>
 
+                      <p className="text-center text-slate-600 text-xs font-[Inter]">
+                        We respect your privacy. No spam, ever.
+                      </p>
+                    </form>
+                  </>
+                ) : (
+                  /* Success State */
+                  <div className="text-center py-16">
+                    <div className="w-20 h-20 rounded-full bg-[rgba(16,185,129,0.15)] border border-[rgba(16,185,129,0.3)] flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-10 h-10 text-green-400" />
+                    </div>
+                    <h3 className="font-[Outfit] font-black text-2xl text-white mb-3">Message Sent! 🎉</h3>
+                    <p className="text-slate-400 font-[Inter] text-sm leading-relaxed max-w-sm mx-auto mb-8">
+                      Thank you for reaching out! Our team will review your message and get back to you within 2–4 business hours.
+                    </p>
+                    <button
+                      onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', company: '', service: '', message: '' }); }}
+                      className="btn-outline text-sm px-6 py-3"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* ===== MAP / LOCATION ===== */}
+      <section className="relative py-20 bg-[#0A0F1E] overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-[Outfit] font-bold text-3xl text-white mb-2">
+              Find Us On <span className="text-gradient">The Map</span>
+            </h2>
+            <p className="text-slate-400 text-sm font-[Inter]">Prabhadevi, Mumbai, Maharashtra, India</p>
+          </div>
 
+          <div className="rounded-3xl overflow-hidden neon-border p-1">
+            <iframe
+              title="Trivexon Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.2!2d72.822!3d18.997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce70b1e0e6e5%3A0x0!2sPrabhadevi%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="380"
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85) contrast(1.1)' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-2xl"
+            />
+          </div>
+        </div>
+      </section>
 
-
-
-
-
-
-
-
-    </section>
+    </div>
   );
 };
 

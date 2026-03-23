@@ -29,11 +29,11 @@ export default function FAQSection() {
 
   return (
     <section className="relative w-full bg-gradient-to-b from-white to-gray-50 py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      
+
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-amber-100/20 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-100/20 to-transparent rounded-full translate-x-1/3 translate-y-1/3"></div>
-      
+
       {/* Geometric Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -44,7 +44,7 @@ export default function FAQSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
+
           {/* LEFT SIDE - Content */}
           <div>
             {/* Header */}
@@ -56,7 +56,7 @@ export default function FAQSection() {
                 </span>
                 <div className="w-8 h-[2px] bg-gradient-to-r from-amber-500 to-orange-500"></div>
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 <span className="block text-transparent bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text">
                   Frequently Asked
@@ -65,7 +65,7 @@ export default function FAQSection() {
                   Questions
                 </span>
               </h2>
-              
+
               <p className="text-gray-600 text-lg max-w-xl">
                 Find answers to common questions about our services, processes, and how we deliver exceptional results.
               </p>
@@ -74,41 +74,36 @@ export default function FAQSection() {
             {/* FAQ Accordion */}
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`group bg-white rounded-2xl border transition-all duration-500 overflow-hidden ${
-                    openIndex === index 
-                      ? 'border-amber-200 shadow-xl shadow-amber-100/50' 
+                  className={`group bg-white rounded-2xl border transition-all duration-500 overflow-hidden ${openIndex === index
+                      ? 'border-amber-200 shadow-xl shadow-amber-100/50'
                       : 'border-gray-100 shadow-lg hover:shadow-xl hover:border-amber-100'
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                     className="w-full px-6 py-5 flex items-center justify-between text-left"
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        openIndex === index 
-                          ? 'bg-gradient-to-br from-amber-500 to-orange-500' 
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${openIndex === index
+                          ? 'bg-gradient-to-br from-amber-500 to-orange-500'
                           : 'bg-gray-100 group-hover:bg-amber-50'
-                      } transition-all duration-300`}>
-                        <div className={`text-xl ${
-                          openIndex === index ? 'text-white' : 'text-gray-600 group-hover:text-amber-600'
-                        } transition-colors duration-300`}>
+                        } transition-all duration-300`}>
+                        <div className={`text-xl ${openIndex === index ? 'text-white' : 'text-gray-600 group-hover:text-amber-600'
+                          } transition-colors duration-300`}>
                           {faq.icon}
                         </div>
                       </div>
-                      <h3 className={`text-lg font-semibold ${
-                        openIndex === index ? 'text-gray-900' : 'text-gray-800 group-hover:text-gray-900'
-                      } transition-colors duration-300`}>
+                      <h3 className={`text-lg font-semibold ${openIndex === index ? 'text-gray-900' : 'text-gray-800 group-hover:text-gray-900'
+                        } transition-colors duration-300`}>
                         {faq.question}
                       </h3>
                     </div>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ml-4 ${
-                      openIndex === index 
-                        ? 'bg-gradient-to-br from-amber-500 to-orange-500' 
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ml-4 ${openIndex === index
+                        ? 'bg-gradient-to-br from-amber-500 to-orange-500'
                         : 'bg-gray-100 group-hover:bg-amber-50'
-                    } transition-all duration-300`}>
+                      } transition-all duration-300`}>
                       {openIndex === index ? (
                         <FaMinus className="text-white text-sm" />
                       ) : (
@@ -116,13 +111,11 @@ export default function FAQSection() {
                       )}
                     </div>
                   </button>
-                  
-                  <div className={`px-6 overflow-hidden transition-all duration-500 ${
-                    openIndex === index ? 'max-h-96 pb-6' : 'max-h-0'
-                  }`}>
-                    <div className={`border-t border-gray-100 pt-6 ${
-                      openIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-                    } transition-all duration-500`}>
+
+                  <div className={`px-6 overflow-hidden transition-all duration-500 ${openIndex === index ? 'max-h-96 pb-6' : 'max-h-0'
+                    }`}>
+                    <div className={`border-t border-gray-100 pt-6 ${openIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+                      } transition-all duration-500`}>
                       <p className="text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
@@ -138,7 +131,7 @@ export default function FAQSection() {
               ))}
             </div>
 
-           
+
           </div>
 
           {/* RIGHT SIDE - Visual */}
@@ -153,14 +146,14 @@ export default function FAQSection() {
                     backgroundSize: '100px 100px',
                   }}></div>
                 </div>
-                
+
                 {/* Person Illustration */}
                 <div className="absolute inset-0 flex items-end justify-center">
                   <div className="relative w-full max-w-md">
                     {/* Abstract shapes */}
                     <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full blur-3xl opacity-20"></div>
                     <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl opacity-20"></div>
-                    
+
                     {/* Person SVG/Image placeholder */}
                     <div className="relative z-10">
                       <div className="w-full h-96 bg-gradient-to-t from-gray-900/10 to-transparent"></div>
@@ -185,21 +178,20 @@ export default function FAQSection() {
                           68%
                         </div>
                       </div>
-                      
+
                       {/* Chart */}
                       <div className="relative h-20">
                         <div className="absolute inset-0 flex items-end gap-1">
                           {[40, 55, 68, 48, 60, 75, 80].map((height, i) => (
-                            <div 
+                            <div
                               key={i}
                               className="flex-1 relative"
                               style={{ height: `${height}%` }}
                             >
-                              <div className={`absolute bottom-0 left-0 right-0 rounded-t-lg ${
-                                i === 2 
-                                  ? 'bg-gradient-to-t from-amber-500 to-orange-500' 
+                              <div className={`absolute bottom-0 left-0 right-0 rounded-t-lg ${i === 2
+                                  ? 'bg-gradient-to-t from-amber-500 to-orange-500'
                                   : 'bg-gradient-to-t from-gray-200 to-gray-300'
-                              }`}></div>
+                                }`}></div>
                               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-500">
                                 {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
                               </div>
@@ -207,7 +199,7 @@ export default function FAQSection() {
                           ))}
                         </div>
                       </div>
-                      
+
                       <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
                         <div className="text-sm text-gray-600">
                           <span className="font-semibold text-gray-900">↑ 24%</span> from last month

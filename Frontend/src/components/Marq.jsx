@@ -6,36 +6,33 @@ const items = [
   "Free Maintenance",
   "Fast Loading Websites",
   "SEO Optimized",
+  "100% Satisfaction",
 ];
 
-export default function Marquee() {
-  return (
-    <section className="w-full overflow-hidden bg-theme py-6">
-      <div className="flex whitespace-nowrap">
-        {/* First Row */}
-        <div className="flex animate-marquee">
-          {items.map((text, i) => (
-            <div
-              key={i}
-              className="mx-6 flex items-center text-white text-2xl font-medium"
-            >
-              <span className="mr-3 text-yellow-400">✦</span>
-              {text}
-            </div>
-          ))}
-        </div>
+export default function Marq() {
+  const doubled = [...items, ...items];
 
-        {/* Duplicate Row for seamless loop */}
-        <div className="flex animate-marquee">
-          {items.map((text, i) => (
-            <div
-              key={`dup-${i}`}
-              className="mx-6 flex items-center text-white text-2xl font-medium"
-            >
-              <span className="mr-3 text-yellow-400">✦</span>
-              {text}
-            </div>
-          ))}
+  return (
+    <section className="w-full overflow-hidden py-0 relative">
+      {/* Gradient bg strip */}
+      <div className="bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 py-4">
+        <div className="flex whitespace-nowrap">
+          <div className="flex animate-marquee">
+            {doubled.map((text, i) => (
+              <div key={i} className="mx-6 flex items-center gap-3 flex-shrink-0">
+                <span className="text-yellow-300 text-lg">✦</span>
+                <span className="font-[Outfit] font-semibold text-white text-base tracking-wide">{text}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex animate-marquee" aria-hidden="true">
+            {doubled.map((text, i) => (
+              <div key={`b-${i}`} className="mx-6 flex items-center gap-3 flex-shrink-0">
+                <span className="text-yellow-300 text-lg">✦</span>
+                <span className="font-[Outfit] font-semibold text-white text-base tracking-wide">{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,560 +1,75 @@
 import React from "react";
+import ServicePage from "./ServicePage";
+import { Globe, Smartphone, Zap, PenTool, Code2, Shield, Layers, Eye, RefreshCw, Search } from "lucide-react";
 
-// Add custom styles for 3D flip effect
-const flipStyles = `
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .transform-style-preserve-3d {
-    transform-style: preserve-3d;
-  }
-  .group:hover .group-hover\\:rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-`;
-
-
-export default function HeroSection() {
+export default function WebDesign() {
   return (
-    <>
-      <style>{flipStyles}</style>
-      <section
-        className="relative w-full  bg-cover bg-center overflow-hidden"
-      // style={{
-      //   backgroundImage:
-      //     "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d')",
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#0F172A]/10"></div>
-
-        {/* Content */}
-        <div className="relative max-w-9xl mx-auto px-6 py-10">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            {/* LEFT CONTENT */}
-            <div className="text-white animate-fadeInUp ml-30">
-              <h1 className="text-[42px] lg:text-[52px]  -mt-35 font-bold text-black leading-tight">
-                Empowering Businesses <br />
-                With Smart Solutions
-              </h1>
-
-              <div className="w-16 h-[3px] bg-blue-500 my-6"></div>
-
-              <p className="text-lg text-blue-900 max-w-xl">
-                We deliver reliable, scalable and innovative solutions
-                tailored to meet modern business challenges and growth
-                objectives.
-              </p>
-
-              <div className="mt-8 border-l-4 border-blue-500 pl-6 italic text-blue-900">
-                We focus on long-term partnerships and measurable business
-                outcomes.
-              </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="overflow-hidden bg-transparent">
-              <img
-                src="/servicesimg/web.png"
-                alt="web design"
-                className="w-400 h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* BOTTOM WAVE */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            className="w-full h-[80px] rotate-180"
-          >
-            <path
-              d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7
-              c75.8,32.2,133.7,44.5,192.6,49.7
-              c23.6,2.1,48.7,3.5,103.4-2.5
-              c54.7-6,106.2-25.6,106.2-25.6V0H0v207.3z"
-              fill="#ffffff"
-            />
-          </svg>
-        </div>
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section className="w-full bg-white py-14">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* LEFT IMAGE */}
-            <div className="flex justify-center">
-              <img
-                src="/servicesimg/web.png"
-                alt="Website Design Illustration"
-                className="max-w-[480px] w-full"
-              />
-            </div>
-
-            {/* RIGHT CONTENT */}
-            <div>
-              {/* <span className="text-blue-600 font-semibold tracking-widest text-sm uppercase">
-                About Us
-              </span> */}
-
-              <h2 className=" text-[38px] leading-tight font-bold text-[#0F2A56]">
-                Reasons To Choose Us
-                as Your Mumbai
-                Website Design
-                Company
-              </h2>
-
-              <p className="mt-6 text-gray-600 leading-relaxed text-[15px]">
-                Site Invention is one of the leading web designing companies in
-                Mumbai that not only creates a visually appealing website for
-                your business but also focuses on adding valuable insights to
-                your business with the core motive of generating opportunities
-                and profitability to your business. Site Invention's web design
-                and development team has an in-depth knowledge and skill that
-                concentrates on designing constructive customized designs,
-                leading to business profitability, increase in website traffic
-                and conversion rates. We also provide a variety of web design
-                services like web development, web re-designing, web hosting,
-                etc.
-              </p>
-
-              <p className="mt-4 text-gray-600 leading-relaxed text-[15px]">
-                Site Invention excels at creating eye-catching impressive,
-                responsive and user-friendly websites with latest advanced
-                technologies. If you are looking to convert the idea of your
-                website into reality, contact Site Invention now!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WEB DESIGN PROCESS SECTION */}
-      <WebDesignProcess />
-      {/* =============================================================================================== */}
-      {/* WEBSITE ADVANTAGES SECTION */}
-      <section className="w-full bg-white py-24 relative overflow-hidden">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-100 to-gray-200"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          {/* Elegant Section Header */}
-          <div className="text-center mb-24">
-
-            <h2 className="text-5xl font-light text-gray-900 mb-6 leading-tight">
-              Why Your Business Needs
-              <span className="font-semibold text-gray-900"> Professional Web Design</span>
-            </h2>
-            <div className="w-24 h-0.5 bg-gray-300 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
-              In an increasingly digital world, your website serves as the foundation of your business success
-            </p>
-          </div>
-
-          {/* Timeline-Style Layout */}
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
-
-            {/* Advantage Items */}
-            <div className="space-y-16">
-              {/* Item 1 - Left */}
-              <div className="flex items-center gap-12">
-                <div className="flex-1 text-right pr-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">1</span>
-                    </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">Global Market Access</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed max-w-md ml-auto">
-                    Expand your business beyond geographical boundaries. A professional website opens doors to international markets,
-                    allowing customers from around the world to discover and engage with your brand 24/7.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 w-16 h-16 bg-blue-500/20 rounded-full animate-ping"></div>
-                </div>
-                <div className="flex-1 pl-12"></div>
-              </div>
-
-              {/* Item 2 - Right */}
-              <div className="flex items-center gap-12">
-                <div className="flex-1 pr-12"></div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-white border-4 border-green-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 w-16 h-16 bg-green-500/20 rounded-full animate-ping"></div>
-                </div>
-                <div className="flex-1 text-left pl-12">
-                  <div class="inline-flex items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-semibold text-gray-900">Enhanced Brand Credibility</h3>
-                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">2</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed max-w-md">
-                    Establish trust and authority in your industry. A well-designed website serves as digital proof of your
-                    professionalism, helping potential customers feel confident in choosing your business over competitors.
-                  </p>
-                </div>
-              </div>
-
-              {/* Item 3 - Left */}
-              <div className="flex items-center gap-12">
-                <div className="flex-1 text-right pr-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">3</span>
-                    </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">Intelligent Marketing Platform</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed max-w-md ml-auto">
-                    Transform your marketing efforts with data-driven strategies. Your website becomes a powerful tool for
-                    targeted campaigns, lead generation, and measuring marketing effectiveness with precision.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-white border-4 border-purple-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 w-16 h-16 bg-purple-500/20 rounded-full animate-ping"></div>
-                </div>
-                <div className="flex-1 pl-12"></div>
-              </div>
-
-              {/* Item 4 - Right */}
-              <div className="flex items-center gap-12">
-                <div className="flex-1 pr-12"></div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-white border-4 border-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 w-16 h-16 bg-orange-500/20 rounded-full animate-ping"></div>
-                </div>
-                <div className="flex-1 text-left pl-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-semibold text-gray-900">Competitive Differentiation</h3>
-                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">4</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed max-w-md">
-                    Stand out in crowded marketplaces with unique digital experiences. Your website becomes a powerful
-                    platform to showcase what makes your business special and why customers should choose you.
-                  </p>
-                </div>
-              </div>
-
-              {/* Item 5 - Left */}
-              <div className="flex items-center gap-12">
-                <div className="flex-1 text-right pr-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">5</span>
-                    </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">Customer Behavior Analytics</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed max-w-md ml-auto">
-                    Gain deep insights into customer preferences and behavior patterns. Use valuable data to make
-                    informed decisions that continuously improve your products, services, and customer experience.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-white border-4 border-red-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 w-16 h-16 bg-red-500/20 rounded-full animate-ping"></div>
-                </div>
-                <div className="flex-1 pl-12"></div>
-              </div>
-
-              {/* Item 6 - Right */}
-              <div className="flex items-center gap-12">
-                <div className="flex-1 pr-12"></div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-white border-4 border-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 w-16 h-16 bg-teal-500/20 rounded-full animate-ping"></div>
-                </div>
-                <div className="flex-1 text-left pl-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-semibold text-gray-900">Continuous Customer Support</h3>
-                    <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">6</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed max-w-md">
-                    Provide round-the-clock assistance and information. Your website serves as an always-available
-                    resource for customers, offering support, answers, and guidance whenever they need it.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </section>
-
-      {/* TECH STACK SECTION */}
-      <section className="w-full bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-              Web Design Technology Stack
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Modern tools and frameworks we use to create stunning, high-performance websites
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              { name: "React", category: "Frontend", icon: "⚛️" },
-              { name: "Next.js", category: "Framework", icon: "▲" },
-              { name: "TypeScript", category: "Language", icon: "📘" },
-              { name: "Tailwind CSS", category: "Styling", icon: "🎨" },
-              { name: "Node.js", category: "Backend", icon: "🟢" },
-              { name: "MongoDB", category: "Database", icon: "🍃" },
-              { name: "Figma", category: "Design", icon: "🎯" },
-              { name: "Adobe XD", category: "Design", icon: "📐" },
-              { name: "WordPress", category: "CMS", icon: "📝" },
-              { name: "Shopify", category: "E-commerce", icon: "🛒" },
-              { name: "Vercel", category: "Hosting", icon: "▲" },
-              { name: "AWS", category: "Cloud", icon: "☁️" }
-            ].map((tech, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-50 to-pink-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">{tech.icon}</span>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">{tech.name}</h3>
-                <p className="text-sm text-gray-500">{tech.category}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CLIENT LOGOS SECTION */}
-      <section className="w-full bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-              Trusted by Leading Clients
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We've helped businesses across various industries achieve their SEO goals
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3  items-center">
-            {[
-              { name: "Site Invention", logo: "/images/logo.jpeg" },
-              { name: "TRIVEXON", logo: "/clients/trivexon.png" },
-              { name: "SKILLNOXERA", logo: "/clients/skillnoxera.png" },
-
-            ].map((client, index) => (
-              <div key={index} className="flex items-center justify-center">
-                <div className="w-52 h-40 bg-white rounded-lg shadow-sm flex items-center justify-center hover:shadow-md transition-shadow duration-300 border border-gray-100 mx-auto">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-w-full max-h-full object-contain"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="hidden items-center justify-center w-full h-full">
-                    <div className="text-center">
-                      <div className="text-2xl mb-1">🏢</div>
-                      <div className="text-xs font-medium text-gray-600">{client.name}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="w-full bg-white py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-              Are you ready to take your business to
-              <br /> new heights with Mumbai Website
-              <br /> Design Company?
-            </h2>
-            <p className="text-gray-600 mb-8">Inquire with us today</p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
-              Request Quote
-            </button>
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-full h-full bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/images/dot-grid.png')", backgroundSize: '50px 50px' }}></div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
-/* Flip Box Component */
-function FlipBox({ icon, iconBg, title, description }) {
-  return (
-    <div className="group relative  h-65 perspective-1000">
-      <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
-        {/* Front Side */}
-        <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-8">
-          <div className="text-center h-full flex flex-col justify-center">
-            <div className={`w-20 h-20 mx-auto mb-6 ${iconBg} rounded-full flex items-center justify-center`}>
-              <img src={icon} alt={title} className="w-12 h-12" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">{title}</h3>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              {description.substring(0, 100)}...
-            </p>
-
-          </div>
-        </div>
-
-        {/* Back Side */}
-        <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-blue-500 rounded-xl shadow-lg p-8">
-          <div className="text-center h-full flex flex-col justify-center">
-            <h3 className="text-xl font-bold text-white mb-6">{title}</h3>
-            <p className="text-white leading-relaxed">
-              {description}
-            </p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* Step Card */
-function Step({ step, title, logo, color, className = "" }) {
-  return (
-    <div className={`flex flex-col items-center text-center w-44 ${className}`}>
-      <span className="text-sm font-semibold text-blue-600 mb-3">
-        {step}
-      </span>
-
-      <div
-        className={`w-20 h-25 flex items-center justify-center rounded-xl shadow-md ${color}`}
-      >
-        <img
-          src={logo}
-          alt={title}
-          className="w-10 h-10 object-contain"
-        />
-      </div>
-
-      <p className="mt-4 text-sm font-medium text-gray-700 leading-snug">
-        {title}
-      </p>
-    </div>
-  );
-}
-
-function WebDesignProcess() {
-  return (
-    <section className="w-full bg-white  relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center relative">
-
-        {/* Heading */}
-        <h2 className="text-4xl font-semibold text-[#243B6B]  mb-24">
-          Process of Web-Designing at
-          <span className="font-bold "> Site Invention</span>
-        </h2>
-
-        {/* Arc Line */}
-        <div className="absolute left-1/2 top-[220px] -translate-x-1/2 w-[85%] h-[200px] border-t border-dashed border-gray-800 rounded-t-full" />
-
-        {/* Steps */}
-        <div className="relative flex justify-between items-start">
-
-          {/* STEP 1 */}
-          <Step
-            step="STEP 1"
-            title="Discovery And Scope"
-            logo="/images/ser1.png"
-            color="bg-orange-50 text-orange-500"
-            className="mt-40"
-          />
-
-          {/* STEP 2 */}
-          <Step
-            step="STEP 2"
-            title="Content Writing And Assembling"
-            logo="/images/ser2.png"
-            color="bg-blue-50 text-blue-500"
-            className="mt-10"
-          />
-
-          {/* STEP 3 */}
-          <Step
-            step="STEP 3"
-            title="Designs And Development"
-            logo="/images/ser3.png"
-            color="bg-green-50 text-green-500"
-            className="-mt-10"
-          />
-
-          {/* STEP 4 */}
-          <Step
-            step="STEP 4"
-            title="Testing And Launch"
-            logo="/images/ser4.png"
-            color="bg-sky-50 text-sky-500"
-            className="mt-10"
-
-          />
-
-          {/* STEP 5 */}
-          <Step
-            step="STEP 5"
-            title="Post-Release Support And Maintenance"
-            logo="/images/ser5.png"
-            color="bg-pink-50 text-pink-500"
-            className="mt-40"
-          />
-
-        </div>
-      </div>
-    </section>
+    <ServicePage
+      badge="Web Design & Development"
+      title='Stunning Websites That <span class="text-gradient">Convert & Perform</span>'
+      description="We design and develop high-performance websites that combine breathtaking aesthetics with conversion-optimised UX — from corporate sites to complex web applications."
+      accentColor="#7C3AED"
+      heroIcon={<Globe className="w-full h-full" />}
+      stats={[
+        { value: "200+", label: "Sites Delivered" },
+        { value: "98%", label: "Client Satisfaction" },
+        { value: "2x", label: "Avg. Traffic Growth" },
+      ]}
+      overview={{
+        heading: 'Why Choose Trivexon for <span class="text-gradient">Web Design?</span>',
+        paragraphs: [
+          "Trivexon builds websites that go beyond good looks. Every pixel is crafted with intent — your site will load fast, rank on Google, and guide visitors to take action.",
+          "From startups needing their first digital home to enterprises demanding scalable web apps, we deliver full-stack web solutions built on the latest technologies.",
+        ],
+      }}
+      benefits={[
+        "Modern, responsive design that works on all devices",
+        "SEO-optimized structure built from day one",
+        "Performance-first development (90+ Lighthouse scores)",
+        "Custom UI/UX tailored to your brand identity",
+        "CMS integration for easy self-management",
+        "Post-launch support and maintenance",
+      ]}
+      features={[
+        { icon: Smartphone, title: "Responsive Design", desc: "Pixel-perfect layouts for every screen size — mobile, tablet, and desktop.", color: "#7C3AED" },
+        { icon: Zap, title: "Lightning Performance", desc: "Fast load times with optimised code, lazy loading, and CDN delivery.", color: "#F472B6" },
+        { icon: Search, title: "SEO-Ready Structure", desc: "Semantic HTML, meta tags, schema markup, and Core Web Vitals compliance.", color: "#06B6D4" },
+        { icon: PenTool, title: "Custom UI Design", desc: "Bespoke designs crafted in Figma — no templates, no compromises.", color: "#FBBF24" },
+        { icon: Code2, title: "Clean Code", desc: "Maintainable, well-documented code built with React, Next.js, or WordPress.", color: "#10B981" },
+        { icon: Shield, title: "Secure & Reliable", desc: "SSL, secure forms, sanitised inputs, and GDPR-compliant data practices.", color: "#A855F7" },
+        { icon: RefreshCw, title: "Easy Maintenance", desc: "CMS-backed pages so you can update content without touching code.", color: "#F59E0B" },
+        { icon: Eye, title: "Conversion Focused", desc: "Clear CTAs, logical user flows, and A/B tested layouts that drive results.", color: "#EF4444" },
+        { icon: Layers, title: "Scalable Architecture", desc: "Built to grow with your business — add features, pages, and integrations anytime.", color: "#06B6D4" },
+      ]}
+      process={[
+        { title: "Discovery & Planning", desc: "We gather your goals, audience, and sitemap requirements in a structured brief." },
+        { title: "Wireframe & Design", desc: "We create Figma wireframes and high-fidelity designs for your approval." },
+        { title: "Development", desc: "Our devs build your site using React/Next.js or WordPress with clean, modular code." },
+        { title: "Content Integration", desc: "We populate all pages with your content, images, and media assets." },
+        { title: "Testing & QA", desc: "Cross-browser, cross-device testing plus performance and accessibility audits." },
+        { title: "Launch & Support", desc: "Go-live with DNS setup, monitoring, and 3 months of free post-launch support." },
+      ]}
+      techStack={[
+        { icon: "⚛️", name: "React", tag: "Frontend" },
+        { icon: "▲", name: "Next.js", tag: "Framework" },
+        { icon: "📘", name: "TypeScript", tag: "Language" },
+        { icon: "🎨", name: "Tailwind CSS", tag: "Styling" },
+        { icon: "📝", name: "WordPress", tag: "CMS" },
+        { icon: "🎯", name: "Figma", tag: "Design" },
+        { icon: "🟢", name: "Node.js", tag: "Backend" },
+        { icon: "☁️", name: "Vercel", tag: "Hosting" },
+        { icon: "🍃", name: "MongoDB", tag: "Database" },
+        { icon: "🔍", name: "GA4", tag: "Analytics" },
+        { icon: "🛡️", name: "Cloudflare", tag: "Security" },
+        { icon: "📱", name: "PWA", tag: "Mobile" },
+      ]}
+      faq={[
+        { q: "How long does a website take to build?", a: "A standard business website takes 2–4 weeks. Complex web apps or e-commerce platforms typically take 6–12 weeks." },
+        { q: "Do you provide website maintenance after launch?", a: "Yes, all our packages include 3 months of free maintenance. We also offer ongoing monthly retainer plans." },
+        { q: "Will my website be mobile-friendly?", a: "Absolutely. Every site we build is responsive by default — mobile is always our first consideration." },
+        { q: "Can I update the website myself?", a: "Yes! We integrate CMS solutions (WordPress, Sanity, or similar) so you can manage content without needing a developer." },
+        { q: "Do you redesign existing websites?", a: "Yes, we love redesign projects. We analyse UX issues, replatform if needed, and deliver a faster, better-converting version." },
+      ]}
+    />
   );
 }

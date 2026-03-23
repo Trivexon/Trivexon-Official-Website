@@ -1,90 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* ============================================================
+   DESIGN SYSTEM - TRIVEXON PREMIUM DARK THEME
+   ============================================================ */
+
 :root {
-  --theme: #2563EB;
-  --title: #0F172A;
-  --body: #E5E7EB;
-  --smoke: #F8FAFC;
+  /* Brand Colors */
+  --primary: #7C3AED;         /* Vivid Violet */
+  --primary-light: #A855F7;
+  --secondary: #06B6D4;       /* Cyan */
+  --accent: #F472B6;          /* Pink accent */
+  --gold: #FBBF24;
+
+  /* Backgrounds */
+  --bg-deep: #050711;
+  --bg-dark: #0A0F1E;
+  --bg-card: #0D1226;
+  --bg-glass: rgba(13, 18, 38, 0.7);
+  --bg-glass-light: rgba(124, 58, 237, 0.08);
+
+  /* Text */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  /* Borders */
+  --border-subtle: rgba(124, 58, 237, 0.15);
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+  --grad-hero: linear-gradient(135deg, #050711 0%, #0A0F1E 50%, #0D1226 100%);
+  --grad-card: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
 }
 
-.text-theme { color: var(--theme); }
-.text-title { color: var(--title); }
-.text-body  { color: var(--body); }
-.bg-smoke   { background-color: var(--smoke); }
-.bg-theme   { background-color: var(--theme); }
-
-/* ---------------- HERO BG ---------------- */
-.bg-hero {
-  /* background-color: #134686; */
-  background-image: url('/public/images/hero.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ---- GLOBAL BASE ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* ---------------- OUTLINE TEXT ---------------- */
-.text-outline {
-  -webkit-text-stroke: 2px #3d3d3d;
-  color: transparent;
+html {
+  scroll-behavior: smooth;
 }
-/* ---------------- MARQUEE ---------------- */
-@keyframes marquee {
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ---- UTILITY CLASSES ---- */
+.text-gradient {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-card-hover {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.2), 0 20px 60px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--grad-primary);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.6);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 13px 31px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: rgba(124, 58, 237, 0.1);
+  transform: translateY(-2px);
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: #A855F7;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 100px;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ---- GLOW EFFECTS ---- */
+.glow-violet {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.35);
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(124, 58, 237, 0.6);
+}
+
+/* ---- ANIMATED GRADIENT BG ---- */
+.animated-bg {
+  background: linear-gradient(-45deg, #050711, #0A0F1E, #0D1226, #07040F);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- FLOATING ORBS ---- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb-violet {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, transparent 70%);
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+}
+
+.orb-pink {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.25) 0%, transparent 70%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* ---- GRID DOTS PATTERN ---- */
+.dots-bg {
+  background-image: radial-gradient(rgba(124, 58, 237, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ---- MARQUEE ---- */
+@keyframes marquee-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.animate-marquee {
-  animation: marquee 20s linear infinite;
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-/* ---------------- SLOW SPIN ---------------- */
+.animate-marquee {
+  animation: marquee-left 25s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-right 25s linear infinite;
+}
+
+/* ---- SLOW SPIN ---- */
 @keyframes slow-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 .animate-slow-spin {
-  animation: slow-spin 8s linear infinite;
+  animation: slow-spin 12s linear infinite;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Infinite Scroll Animation */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* ---- PULSE RING ---- */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 16px rgba(124, 58, 237, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
 }
 
-.animate-marquee {
-  animation: marquee 20s linear infinite;
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s ease infinite;
 }
 
-/* Outline text (SOLUTIONS) */
+/* ---- SHIMMER ---- */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #7C3AED 25%, #06B6D4 50%, #A855F7 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ---- CARD SHINE ---- */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.card-shine:hover::before {
+  left: 150%;
+}
+
+/* ---- DIVIDER ---- */
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.5), rgba(6, 182, 212, 0.5), transparent);
+}
+
+/* ---- NUMBER COUNTER STYLE ---- */
+.stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.8);
+}
+
+/* ---- TEXT OUTLINE ---- */
 .text-outline {
-  -webkit-text-stroke: 2px #3d3d3d;
+  -webkit-text-stroke: 1px rgba(124, 58, 237, 0.6);
+  color: transparent;
 }
 
-
-/* for clock rotate */
-@keyframes slow-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---- ICON GRADIENT ---- */
+.icon-gradient {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.animate-slow-spin {
-  animation: slow-spin 8s linear infinite;
+/* ---- FADE IN ANIMATION ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ---- HERO SPECIFIC ---- */
+.hero-grid {
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Neon border effect */
+.neon-border {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+              var(--grad-primary) border-box;
 }

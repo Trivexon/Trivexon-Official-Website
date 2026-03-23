@@ -1,37 +1,28 @@
 import React from "react";
 
+const words = [
+  "Web Design", "AI Automation", "ERP/CRM Solutions", "SEO Services",
+  "UI/UX Design", "E-Commerce", "WordPress", "AI Agents", "N8N Workflow", "Voice Automation"
+];
+
 export default function Marquee() {
   return (
-    <section className="overflow-hidden w-full py-6 bg-white">
-      
+    <section className="overflow-hidden w-full py-5 bg-[#050711] border-y border-[rgba(124,58,237,0.1)]">
       <div className="flex whitespace-nowrap animate-marquee">
-        
-        {/* LOOP CONTENT */}
-        <div className="flex items-center gap-8 mx-8">
-          <span className="text-yellow-500 text-4xl">⭐</span>
-          <span className="text-[68px] font-black text-[#1d1f24] tracking-wide">
-            MARKETING
-          </span>
-          <span className="text-yellow-500 text-4xl">⭐</span>
-          <span className="text-[68px] font-black text-transparent tracking-wider text-outline">
-            SOLUTIONS
-          </span>
-         
-        </div>
-
-        {/* DUPLICATE FOR INFINITE SCROLL */}
-        <div className="flex items-center gap-8 mx-8" aria-hidden="true">
-          <span className="text-yellow-500 text-4xl">⭐</span>
-          <span className="text-[68px] font-black text-[#1d1f24] tracking-wide">
-            MARKETING
-          </span>
-          <span className="text-yellow-500 text-4xl">⭐</span>
-          <span className="text-[68px] font-black text-transparent tracking-wider text-outline">
-            SOLUTIONS
-          </span>
-          <span className="text-yellow-500 text-4xl">⭐</span>
-        </div>
-
+        {[...words, ...words, ...words].map((word, i) => (
+          <div key={i} className="flex items-center gap-4 mx-6 flex-shrink-0">
+            <span
+              className="font-[Outfit] font-black text-[52px] tracking-tight leading-none"
+              style={{
+                color: i % 3 === 0 ? 'transparent' : i % 3 === 1 ? '#94A3B8' : 'transparent',
+                WebkitTextStroke: i % 3 !== 1 ? '1px rgba(124,58,237,0.5)' : 'none',
+              }}
+            >
+              {word}
+            </span>
+            <span className="text-violet-500/60 text-3xl flex-shrink-0">✦</span>
+          </div>
+        ))}
       </div>
     </section>
   );
