@@ -152,79 +152,84 @@ export default function OurWorks() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-[Outfit] font-semibold transition-all duration-200 ${
-                  activeFilter === cat
+                className={`px-5 py-2 rounded-full text-sm font-[Outfit] font-semibold transition-all duration-200 ${activeFilter === cat
                     ? 'bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-[0_4px_16px_rgba(124,58,237,0.4)]'
                     : 'glass-card text-slate-400 hover:text-white hover:border-violet-500/40'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
             ))}
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((project) => (
+          {/* Projects List — full width, one per row */}
+          <div className="flex flex-col gap-8">
+            {filtered.map((project, idx) => (
               <div
                 key={project.id}
-                className="group glass-card-hover card-shine rounded-2xl overflow-hidden"
+                className="group glass-card-hover card-shine rounded-2xl overflow-hidden cursor-pointer flex flex-col md:flex-row"
+                style={{ borderLeft: `3px solid ${project.accent}66` }}
+                onClick={() => openModal(idx)}
               >
-                {/* Image */}
-                <div className="relative h-52 overflow-hidden">
+                {/* Image — left side on desktop */}
+                <div className="relative md:w-96 lg:w-[480px] flex-shrink-0 h-56 md:h-auto overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] via-transparent to-transparent opacity-80" />
-
-                  {/* Category badge */}
                   <div
-                    className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-[Outfit] font-semibold text-white"
-                    style={{ background: project.accent + '33', border: `1px solid ${project.accent}55` }}
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(to right, transparent 70%, #0A0F1E 100%)` }}
+                  />
+                  {/* Number badge */}
+                  <div
+                    className="absolute top-4 left-4 w-10 h-10 rounded-full flex items-center justify-center font-[Outfit] font-black text-white text-sm"
+                    style={{ background: project.accent + '55', border: `1.5px solid ${project.accent}99` }}
                   >
-                    {project.category}
-                  </div>
-
-                  {/* Hover link icon */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                      <ExternalLink className="w-5 h-5 text-white" />
-                    </div>
+                    {String(idx + 1).padStart(2, '0')}
                   </div>
                 </div>
 
-                {/* Info */}
-                <div className="p-6">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-3">
+                {/* Content — right side */}
+                <div className="flex-1 p-8 flex flex-col justify-center">
+                  {/* Category + Tags row */}
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
+                    <span
+                      className="px-3 py-1 rounded-full text-xs font-[Outfit] font-bold text-white"
+                      style={{ background: project.accent + '33', border: `1px solid ${project.accent}66` }}
+                    >
+                      {project.category}
+                    </span>
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
                         className="text-xs px-2.5 py-0.5 rounded-full font-[Outfit]"
-                        style={{ background: project.accent + '18', color: project.accent }}
+                        style={{ background: project.accent + '14', color: project.accent }}
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <h3 className="font-[Outfit] font-bold text-lg text-white mb-2 group-hover:text-violet-300 transition-colors">
+                  <h3
+                    className="font-[Outfit] font-black text-2xl md:text-3xl text-white mb-3 group-hover:text-violet-300 transition-colors"
+                  >
                     {project.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed font-[Inter] mb-4">
+                  <p className="text-slate-400 text-base leading-relaxed font-[Inter] mb-6">
                     {project.description}
                   </p>
 
-                  <a
-                    href={project.link}
-                    className="flex items-center gap-2 text-sm font-[Outfit] font-semibold transition-colors"
-                    style={{ color: project.accent }}
-                  >
-                    View Project
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  <div className="flex items-center gap-4">
+                    <span
+                      className="flex items-center gap-2 text-sm font-[Outfit] font-semibold"
+                      style={{ color: project.accent }}
+                    >
+                      View Details
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

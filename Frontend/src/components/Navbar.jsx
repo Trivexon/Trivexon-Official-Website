@@ -161,10 +161,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              {/* CTA Button */}
-              <Link to="/contact" className="btn-primary text-sm py-2.5 px-5">
-                Get Started
-              </Link>
+
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -230,11 +227,45 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <Link to="/contact" className="btn-primary mt-6 w-full justify-center">
-            Get Started →
-          </Link>
+
         </div>
       </div>
+      {/* Floating WhatsApp Call Button */}
+      <a
+        href="https://wa.me/919999999999?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20you!"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          position: 'fixed',
+          bottom: '28px',
+          right: '28px',
+          zIndex: 9999,
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, #25D366, #128C7E)',
+          boxShadow: '0 4px 24px rgba(37,211,102,0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          textDecoration: 'none',
+          animation: 'waPulse 2s infinite',
+        }}
+        title="WhatsApp Call"
+      >
+        {/* WhatsApp SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
+          <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.637 4.833 1.754 6.865L2 30l7.324-1.724C11.238 29.384 13.563 30 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5c-2.188 0-4.242-.584-6.02-1.604l-.43-.254-4.346 1.023 1.054-4.24-.278-.44A11.44 11.44 0 014.5 16C4.5 9.649 9.649 4.5 16 4.5S27.5 9.649 27.5 16 22.351 27.5 16 27.5zm6.29-8.42c-.344-.172-2.04-1.006-2.355-1.12-.315-.115-.544-.172-.773.172-.229.344-.887 1.12-1.087 1.35-.2.23-.4.258-.744.086-.344-.172-1.452-.535-2.766-1.706-1.022-.912-1.712-2.038-1.912-2.382-.2-.344-.022-.53.15-.701.155-.155.344-.4.516-.602.172-.2.229-.344.344-.573.115-.229.057-.43-.029-.602-.086-.172-.773-1.864-1.059-2.553-.279-.672-.563-.58-.773-.59l-.658-.012a1.264 1.264 0 00-.916.43c-.315.344-1.202 1.175-1.202 2.866 0 1.69 1.23 3.325 1.401 3.554.172.229 2.42 3.697 5.865 5.186.82.354 1.46.566 1.958.724.823.262 1.572.225 2.164.137.66-.099 2.04-.833 2.327-1.638.287-.805.287-1.494.2-1.638-.086-.143-.315-.229-.658-.4z"/>
+        </svg>
+        <style>{`
+          @keyframes waPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+            70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+          }
+        `}</style>
+      </a>
     </>
   );
 };
