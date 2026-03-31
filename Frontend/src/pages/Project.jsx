@@ -11,37 +11,37 @@ const projects = [
     description: "Premium real estate platform delivering luxury digital experiences with strong SEO, fast performance, and lead-generation funnels.",
     image: "/images/mna.png",
     accent: "#7C3AED",
-    link: "#",
+    link: "https://www.mnacaps.com/",
   },
   {
     id: 2,
-    title: "Real Estate",
+    title: "The GoodWill Facade",
     category: "Web Application",
     tags: ["React", "Tailwind CSS", "Contentful API", "SEO", "Animations"],
     description: "A renewable energy brand with a high-impact digital presence — modern design, performance optimization, and top-ranking SEO.",
     image: "/images/goodwill.png",
     accent: "#10B981",
-    link: "#",
+    link: "https://www.thegoodwillfacade.com/",
   },
   {
     id: 3,
-    title: "TechStart SaaS Platform",
+    title: "SEBI DRHP Automation & AI Summarization Software (Desktop EXE)",
     category: "Web App",
     tags: ["React", "Node.js", "Cloud"],
-    description: "Cutting-edge SaaS application with advanced functionality, seamless UX, and scalable architecture built for enterprise clients.",
-    image: "/images/project.png",
+    description: "Development and delivery of a custom desktop-based SEBI DRHP Automation Software,provided as a compiled Windows EXE, designed to automate the end-to-end processing of SEBI DRHP filings",
+    image: "/images/sebi.png",
     accent: "#06B6D4",
     link: "#",
   },
   {
     id: 4,
-    title: "Luxury Homes Realty",
+    title: "Healthys",
     category: "Web App",
     tags: ["Vue.js", "MySQL", "API"],
     description: "Premium property portal with immersive virtual tours, advanced search, and an integrated CRM for high-end real estate transactions.",
-    image: "/images/aboutus.png",
+    image: "/images/Healthy.png",
     accent: "#FBBF24",
-    link: "#",
+    link: "https://healthys-five.vercel.app/",
   },
   {
     id: 5,
@@ -143,9 +143,8 @@ export default function OurWorks() {
             {projects.map((project, idx) => (
               <div
                 key={project.id}
-                className={`group glass-card-hover card-shine rounded-2xl overflow-hidden cursor-pointer flex flex-col md:items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                className={`group glass-card-hover card-shine rounded-2xl overflow-hidden flex flex-col md:items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 style={{ borderLeft: `3px solid ${project.accent}66` }}
-                onClick={() => openModal(idx)}
               >
                 {/* Image — alternating sides on desktop */}
                 <div className="group/image relative md:w-80 lg:w-[600px] flex-shrink-0 h-56 md:h-[360px] overflow-hidden">
@@ -198,13 +197,27 @@ export default function OurWorks() {
                   </p>
 
                   <div className="flex items-center gap-4">
-                    <span
-                      className="flex items-center gap-2 text-sm font-[Outfit] font-semibold"
-                      style={{ color: project.accent }}
-                    >
-                      View Details
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                    {project.link && project.link !== "#" ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-[Outfit] font-semibold transition-all hover:opacity-80"
+                        style={{ color: project.accent }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View Details
+                        <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    ) : (
+                      <span
+                        className="flex items-center gap-2 text-sm font-[Outfit] font-semibold opacity-40 cursor-not-allowed"
+                        style={{ color: project.accent }}
+                      >
+                        Coming Soon
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
