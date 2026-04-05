@@ -44,11 +44,11 @@ const perks = [
   { icon: "🤝", title: "Dedicated Support", desc: "A real team, always available — not chatbots, not ticket queues." },
 ];
 
-const team = [
-  { name: "Pravin Maurya", role: "AI & ML Engineer", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop", color: "#7C3AED" },
-  { name: "Nehal", role: "Data Analyst & AI Automation ", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop", color: "#06B6D4" },
-  { name: "Vivek Maurya", role: "UI/UX Designer & Fullstack Developer", image: "images/vivek.jpeg", color: "#F472B6" },
-];
+// const team = [
+//   { name: "Pravin Maurya", role: "AI & ML Engineer", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop", color: "#7C3AED" },
+//   { name: "Nehal", role: "Data Analyst & AI Automation ", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop", color: "#06B6D4" },
+//   { name: "Vivek Maurya", role: "UI/UX Designer & Fullstack Developer", image: "images/vivek.jpeg", color: "#F472B6" },
+// ];
 
 export default function AboutHero() {
   return (
@@ -222,7 +222,7 @@ export default function AboutHero() {
       </section>
 
       {/* ===== TEAM ===== */}
-      <section className="relative py-24 bg-[#050711] overflow-hidden">
+      {/* <section className="relative py-24 bg-[#050711] overflow-hidden">
         <div className="absolute inset-0 hero-grid opacity-20" />
         <div className="orb orb-violet w-[400px] h-[400px] bottom-0 left-1/3 opacity-15 blur-[130px]" />
 
@@ -243,12 +243,11 @@ export default function AboutHero() {
             {team.map((member, i) => (
               <div key={i} className="group glass-card-hover card-shine rounded-2xl p-6 text-center">
                 <div className="relative w-32 h-32 mx-auto mb-5">
-                  {/* Glow effect behind image */}
+                 
                   <div
                     className="absolute inset-0 rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300"
                     style={{ background: member.color }}
                   />
-                  {/* Profile Image */}
                   <img
                     src={member.image}
                     alt={member.name}
@@ -262,7 +261,7 @@ export default function AboutHero() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ===== CTA ===== */}
       <section className="relative py-20 overflow-hidden">
