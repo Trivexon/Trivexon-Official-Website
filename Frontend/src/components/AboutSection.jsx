@@ -28,7 +28,7 @@ const AboutSection = () => {
           {/* Left - Image side */}
           <div className="relative order-2 lg:order-1">
             {/* Main image frame */}
-            <div className="relative rounded-3xl overflow-hidden neon-border p-1">
+            <div className="relative rounded-3xl overflow-hidden  p-1">
               <div className="rounded-2xl overflow-hidden">
                 <img
                   src="/images/aboutus.png"

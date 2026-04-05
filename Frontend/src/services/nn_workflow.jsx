@@ -9,6 +9,7 @@ export default function N8n() {
       title='Connect Every App. <span class="text-gradient">Automate Every Process.</span>'
       description="We build powerful n8n automation workflows that connect all your business tools — eliminating manual data entry, syncing systems, and orchestrating complex multi-step processes automatically."
       accentColor="#10B981"
+      heroImage="/images/n8n.png"
       heroIcon={<RefreshCw className="w-full h-full" />}
       stats={[
         { value: "500+", label: "App Integrations" },

@@ -9,6 +9,7 @@ export default function WebDesign() {
       title='Stunning Websites That <span class="text-gradient">Convert & Perform</span>'
       description="We design and develop high-performance websites that combine breathtaking aesthetics with conversion-optimised UX — from corporate sites to complex web applications."
       accentColor="#7C3AED"
+      heroImage="/images/web.png"
       heroIcon={<Globe className="w-full h-full" />}
       stats={[
         { value: "200+", label: "Sites Delivered" },

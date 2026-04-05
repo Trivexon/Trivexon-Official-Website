@@ -115,10 +115,8 @@ const SimpleFooter = () => {
                   trivexontech@gmail.com
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[rgba(244,114,182,0.1)] border border-[rgba(244,114,182,0.2)] flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-4 h-4 text-pink-400" />
-                </div>
+              <li className="flex items-start gap-4">
+                <Phone className="w-5 h-5 text-pink-400 mt-0.5 flex-shrink-0" />
                 <a href="tel:+918657181101" className="text-slate-400 hover:text-pink-400 text-sm font-[Inter] transition-colors">
                   +91 86571 81101
                 </a>

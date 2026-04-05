@@ -9,6 +9,7 @@ export default function Ai_agent() {
       title='Custom AI Agents That <span class="text-gradient">Think, Act & Decide</span>'
       description="We build autonomous AI agents that reason through complex tasks, use tools, access databases, and take actions — going far beyond simple chatbots or rule-based automation."
       accentColor="#7C3AED"
+      heroImage="/images/ai agent hero.png"
       heroIcon={<Bot className="w-full h-full" />}
       stats={[
         { value: "10x", label: "Faster Task Completion" },

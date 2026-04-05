@@ -9,6 +9,7 @@ export default function E_commerce() {
       title='High-Converting Online Stores <span class="text-gradient">Built to Sell</span>'
       description="We design and build e-commerce platforms that turn visitors into buyers — with lightning-fast performance, seamless checkout flows, and smart product management."
       accentColor="#F472B6"
+      heroImage="/images/ecommercehero.png"
       heroIcon={<ShoppingCart className="w-full h-full" />}
       stats={[
         { value: "55+", label: "Stores Built" },

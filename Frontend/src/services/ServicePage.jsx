@@ -23,6 +23,8 @@ export default function ServicePage({
   title,
   description,
   heroIcon,
+  heroImage,
+  heroImageClassName = "w-full h-[300px] sm:h-[400px] lg:h-[480px] xl:h-[520px] object-cover transition-transform duration-700",
   accentColor = "#7C3AED",
   stats = [],
   overview = {},
@@ -46,15 +48,15 @@ export default function ServicePage({
         <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full opacity-15 blur-[100px]"
           style={{ background: '#06B6D4' }} />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-15 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left */}
-            <div>
+            <div className="lg:col-span-5 xl:col-span-5 z-10">
               <div className="flex mb-6">
                 <span className="section-badge">{badge}</span>
               </div>
               <h1
-                className="font-[Outfit] font-black text-5xl lg:text-6xl text-white leading-tight mb-6"
+                className="font-[Outfit] font-black text-4xl lg:text-5xl xl:text-5xl text-white leading-tight mb-6"
                 dangerouslySetInnerHTML={{ __html: title }}
               />
               <p className="section-desc mb-8">{description}</p>
@@ -68,29 +70,11 @@ export default function ServicePage({
               </div>
             </div>
 
-            {/* Right — Icon + Stats */}
-            <div className="flex flex-col gap-5">
-              {/* Big Icon orb */}
-              <div
-                className="w-32 h-32 rounded-3xl flex items-center justify-center mx-auto mb-2 shadow-2xl"
-                style={{ background: accentColor + '22', border: `2px solid ${accentColor}44` }}
-              >
-                <div style={{ color: accentColor }} className="w-16 h-16">
-                  {heroIcon}
-                </div>
+            {/* Right — Image */}
+            <div className="lg:col-span-7 xl:col-span-7 flex justify-end relative mt-10 lg:mt-0">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full lg:w-[125%] lg:translate-x-16 xl:translate-x-24 2xl:translate-x-32 flex items-center justify-center">
+                <img src={heroImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"} alt="Service Hero" className={heroImageClassName} />
               </div>
-
-              {/* Stats row */}
-              {stats.length > 0 && (
-                <div className="grid grid-cols-3 gap-4">
-                  {stats.map((s, i) => (
-                    <div key={i} className="glass-card-hover card-shine rounded-2xl p-4 text-center">
-                      <p className="stat-number text-2xl font-black">{s.value}</p>
-                      <p className="text-slate-400 text-xs font-[Outfit] mt-1">{s.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -101,27 +85,35 @@ export default function ServicePage({
         <section className="relative py-20 bg-[#0A0F1E] overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Side: Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[rgba(255,255,255,0.05)] group">
+                <img src={overview.image || "/images/home-img-2.webp"} alt="Overview" className="w-full h-auto max-h-[650px] object-cover opacity-90 transition-transform duration-700 " />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0A0F1E]/40 mix-blend-multiply"></div>
+                {/* Decorative blur orb */}
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-[60px]" style={{ background: accentColor }}></div>
+              </div>
+
+              {/* Right Side: Text */}
               <div>
-                <div className="flex mb-5">
+                <div className="flex mb-4">
                   <span className="section-badge">Overview</span>
                 </div>
-                <h2 className="section-title mb-6"
+                <h2 className="section-title mb-8 leading-tight"
                   dangerouslySetInnerHTML={{ __html: overview.heading }} />
-              </div>
-              <div className="space-y-4">
-                {overview.paragraphs?.map((p, i) => (
-                  <p key={i} className="text-slate-400 leading-relaxed font-[Inter] text-sm">{p}</p>
-                ))}
+
+                <div className="space-y-6">
+                  {overview.paragraphs?.map((p, i) => (
+                    <p key={i} className="text-slate-300 leading-relaxed font-[Inter] text-base relative pl-5 border-l-2" style={{ borderColor: accentColor }}>{p}</p>
+                  ))}
+                </div>
+
                 {benefits.length > 0 && (
-                  <ul className="space-y-2 mt-6">
-                    {benefits.map((b, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: accentColor }} />
-                        <span className="text-slate-300 text-sm font-[Inter]">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-6">
+                    <p className="text-slate-300 leading-relaxed font-[Inter] text-base relative pl-5 border-l-2" style={{ borderColor: accentColor }}>
+                      Our goal is to help your business grow easily. That is why we make sure to provide {benefits.join(", ").toLowerCase()}.
+                    </p>
+                  </div>
                 )}
               </div>
             </div>
@@ -288,9 +280,9 @@ export default function ServicePage({
             <Link to="/contact" className="btn-primary text-base px-8 py-4">
               Request Free Quote <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link to="/contact" className="btn-outline text-base px-8 py-4">
+            <a href="https://wa.me/918655685272?text=Hi%2C%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20a%20project!" target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-8 py-4 inline-flex items-center justify-center">
               Schedule a Call
-            </Link>
+            </a>
           </div>
         </div>
       </section>

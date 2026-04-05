@@ -108,9 +108,9 @@ export default function AboutHero() {
 
             {/* Image */}
             <div className="relative order-2 lg:order-1">
-              <div className="rounded-3xl overflow-hidden neon-border p-1">
+              <div className="rounded-3xl overflow-hidden p-1">
                 <img
-                  src="/images/aboutus.png"
+                  src="/images/home-img-2.webp"
                   alt="About Trivexon"
                   className="w-full h-auto object-cover rounded-2xl"
                 />

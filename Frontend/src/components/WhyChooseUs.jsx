@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
               Elevate Your Business With<br />
               <span className="text-gradient">Expert Solutions</span>
             </h2>
-            <p className="section-desc mb-10">
+            <p className="section-desc mb-5">
               We combine strategic thinking, proven methodologies, and cutting-edge technology to deliver results that create lasting competitive advantages.
             </p>
 
@@ -104,10 +104,10 @@ export default function WhyChooseUs() {
 
           {/* Right - Image + Stats */}
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden neon-border p-1">
+            <div className="relative rounded-3xl overflow-hidden p-1">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/images/hero.png"
+                  src="/images/banner.webp"
                   alt="Why Choose Trivexon"
                   className="w-full h-auto object-cover"
                 />

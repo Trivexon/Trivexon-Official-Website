@@ -95,7 +95,7 @@ const clientTestimonials = [
     gradient: "from-violet-600 to-cyan-500",
   },
   {
-    name: "Neel",
+    name: "Neil",
     role: "Founder, thegoodwillfacade",
     text: "We are extremely happy with the website developed for The Goodwill Facade by Trivexon. Their team truly understood our vision and transformed it into a modern, professional, and visually appealing website.The design is clean, user-friendly, and perfectly showcases our services. The performance and responsiveness across all devices have been excellent, helping us create a strong online presence.Trivexon’s attention to detail, creativity, and timely delivery made the entire process smooth and hassle-free. We highly recommend Trivexon to anyone looking for high-quality website development services.",
     avatar: "NL",
@@ -370,9 +370,9 @@ export default function Clients() {
             <Link to="/contact" className="btn-primary text-base px-8 py-4">
               Start Your Project <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link to="/contact" className="btn-outline text-base px-8 py-4">
+            <a href="https://wa.me/918655685272?text=Hi%2C%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20a%20project!" target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-8 py-4 inline-flex items-center justify-center">
               Schedule a Call
-            </Link>
+            </a>
           </div>
           <p className="text-slate-500 text-sm mt-6 font-[Inter]">No pressure, no obligation — just a conversation about your goals.</p>
         </div>

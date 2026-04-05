@@ -9,6 +9,7 @@ export default function Voice_automation() {
       title='Automate With Voice AI That <span class="text-gradient">Thinks & Talks</span>'
       description="We build AI-powered voice bots and phone automation systems that handle calls, qualify leads, answer queries, and book appointments — 24/7, without human intervention."
       accentColor="#A855F7"
+      heroImage="/images/automation hero.png"
       heroIcon={<Mic className="w-full h-full" />}
       stats={[
         { value: "70%", label: "Call Cost Reduction" },

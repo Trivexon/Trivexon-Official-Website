@@ -9,6 +9,7 @@ export default function Wordpress() {
       title='Powerful WordPress Sites <span class="text-gradient">Without the Limitations</span>'
       description="We build fast, secure, and fully customised WordPress websites — from simple marketing sites to complex multi-site networks — with clean code and no bloated plugins."
       accentColor="#FBBF24"
+      heroImage="/images/wordpress.png"
       heroIcon={<Globe className="w-full h-full" />}
       stats={[
         { value: "80+", label: "WP Sites Built" },

@@ -9,6 +9,8 @@ export default function Erp_Crm() {
       title='Custom ERP & CRM Systems That <span class="text-gradient">Power Your Operations</span>'
       description="We build tailor-made ERP and CRM solutions that unify your business operations, automate workflows, and give you real-time visibility across every department."
       accentColor="#10B981"
+      heroImage="/images/crm.png"
+      heroImageClassName="w-[140%] lg:w-[140%] max-w-none h-[250px] sm:h-[300px] lg:h-[480px] xl:h-[570px] object-contain transition-transform duration-700 translate-x-4 lg:translate-x-8"
       heroIcon={<Settings className="w-full h-full" />}
       stats={[
         { value: "40%", label: "Avg. Efficiency Gain" },

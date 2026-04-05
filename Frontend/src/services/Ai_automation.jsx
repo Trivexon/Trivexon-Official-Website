@@ -9,6 +9,7 @@ export default function Ai_automation() {
       title='Automate Everything. <span class="text-gradient">Scale Without Limits.</span>'
       description="We build intelligent AI automation systems that eliminate repetitive tasks, accelerate workflows, and free your team to focus on what actually moves the needle."
       accentColor="#F59E0B"
+      heroImage="/images/ai automation.png"
       heroIcon={<Bot className="w-full h-full" />}
       stats={[
         { value: "70%", label: "Time Saved on Tasks" },

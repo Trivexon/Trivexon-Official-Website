@@ -9,6 +9,7 @@ export default function Ui_Ux() {
       title='Interfaces That <span class="text-gradient">Delight Users & Drive Results</span>'
       description="We design beautiful, intuitive, and conversion-focused digital interfaces — from mobile apps and web platforms to SaaS dashboards and design systems."
       accentColor="#06B6D4"
+      heroImage="/images/uidesgin.png"
       heroIcon={<PenTool className="w-full h-full" />}
       stats={[
         { value: "150+", label: "Designs Delivered" },

@@ -10,7 +10,7 @@ const testimonials = [
     color: "#7C3AED",
   },
   {
-    name: "Neel",
+    name: "Neil",
     role: "Founder, thegoodwillfacade",
     text: "We are extremely happy with the website developed for The Goodwill Facade by Trivexon. Their team truly understood our vision and transformed it into a modern, professional, and visually appealing website.The design is clean, user-friendly, and perfectly showcases our services. The performance and responsiveness across all devices have been excellent, helping us create a strong online presence.Trivexon’s attention to detail, creativity, and timely delivery made the entire process smooth and hassle-free. We highly recommend Trivexon to anyone looking for high-quality website development services.",
     avatar: "NL",
