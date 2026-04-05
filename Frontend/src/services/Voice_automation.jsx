@@ -1,10 +1,24 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Mic, Phone, Bot, Zap, RefreshCw, Shield, BarChart2, Users, Settings, Globe } from "lucide-react";
-
+import SEOHead, { buildServiceSchema } from "../components/SEOHead";
 export default function Voice_automation() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="Voice AI & Phone Automation Services India"
+        description="Trivexon builds AI-powered voice bots and phone automation systems for Indian businesses. Handle inbound calls, book appointments, and run outbound campaigns 24/7."
+        canonical="/services/voice-automation"
+        image="/images/automation hero.png"
+        keywords="voice AI automation India, AI phone answering service, automated caller AI, voice bot development India, AI call center automation"
+        schema={buildServiceSchema({
+          name: "Voice & AI Automation",
+          description: "AI voice bots for Indian businesses. Automate inbound and outbound calls.",
+          url: "/services/voice-automation",
+          image: "/images/automation hero.png",
+        })}
+      />
+      <ServicePage
       badge="Voice & AI Automation"
       title='Automate With Voice AI That <span class="text-gradient">Thinks & Talks</span>'
       description="We build AI-powered voice bots and phone automation systems that handle calls, qualify leads, answer queries, and book appointments — 24/7, without human intervention."
@@ -67,5 +81,6 @@ export default function Voice_automation() {
         { q: "How long does setup take?", a: "A basic inbound voice bot can be live in 2–3 weeks. Complex multi-flow systems typically take 4–6 weeks." },
       ]}
     />
+    </>
   );
 }

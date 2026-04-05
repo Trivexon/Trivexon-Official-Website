@@ -1,10 +1,25 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { ShoppingCart, CreditCard, Package, BarChart2, Zap, Shield, RefreshCw, Globe, Search, Smartphone } from "lucide-react";
+import SEOHead, { buildServiceSchema } from "../components/SEOHead";
 
 export default function E_commerce() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="E-Commerce Website Development India — Shopify & Custom"
+        description="Trivexon builds high-converting e-commerce websites — Shopify, WooCommerce, and custom React storefronts. Razorpay integration, SEO-ready, mobile-first."
+        canonical="/services/e-commerce"
+        image="/images/ecommercehero.png"
+        keywords="e-commerce website development India, Shopify development Mumbai, WooCommerce development India, online store development, e-commerce agency Mumbai"
+        schema={buildServiceSchema({
+          name: "E-Commerce Website Development",
+          description: "High-converting e-commerce stores built on Shopify, WooCommerce, or custom React. With payment integration, SEO, and mobile-first design.",
+          url: "/services/e-commerce",
+          image: "/images/ecommercehero.png",
+        })}
+      />
+      <ServicePage
       badge="E-Commerce Development"
       title='High-Converting Online Stores <span class="text-gradient">Built to Sell</span>'
       description="We design and build e-commerce platforms that turn visitors into buyers — with lightning-fast performance, seamless checkout flows, and smart product management."
@@ -67,5 +82,6 @@ export default function E_commerce() {
         { q: "Will the store work on mobile?", a: "Absolutely — mobile accounts for 70%+ of e-commerce traffic so mobile UX is always our primary focus." },
       ]}
     />
+    </>
   );
 }

@@ -1,10 +1,25 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Search, BarChart2, TrendingUp, Link2, FileText, Globe, MapPin, Zap, Eye, RefreshCw } from "lucide-react";
+import SEOHead, { buildServiceSchema, buildBreadcrumbSchema } from "../components/SEOHead";
 
 export default function SeoServices() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="SEO Services Mumbai — Rank #1 on Google"
+        description="Trivexon provides data-driven SEO services in Mumbai. Keyword research, on-page SEO, link building, local SEO & technical SEO. Get to page 1 of Google."
+        canonical="/services/seo-services"
+        image="/images/seo.png"
+        keywords="SEO services Mumbai, SEO company Mumbai, local SEO India, technical SEO agency, Google ranking services Mumbai, best SEO agency India"
+        schema={buildServiceSchema({
+          name: "SEO Services",
+          description: "Data-driven SEO strategies that move your website to the top of Google. Keyword research, on-page SEO, link building, and local SEO for Indian businesses.",
+          url: "/services/seo-services",
+          image: "/images/seo.png",
+        })}
+      />
+      <ServicePage
       badge="SEO Services"
       title='Rank Higher. <span class="text-gradient">Get Found. Grow Faster.</span>'
       description="Data-driven SEO strategies that move your website to the top of Google, drive qualified organic traffic, and deliver measurable ROI — not just rankings."
@@ -68,5 +83,6 @@ export default function SeoServices() {
         { q: "Do you work on local SEO only?", a: "We handle local, national, and international SEO — whichever is right for your business goals." },
       ]}
     />
+    </>
   );
 }

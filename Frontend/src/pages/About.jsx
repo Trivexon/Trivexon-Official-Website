@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight, Users, Code2, Globe, Lightbulb, Trophy, Heart } from "lucide-react";
+import SEOHead, { buildBreadcrumbSchema } from "../components/SEOHead";
 
 const stats = [
   { value: "10+", label: "Projects Delivered", icon: "🚀" },
@@ -53,6 +54,16 @@ const perks = [
 export default function AboutHero() {
   return (
     <div className="bg-[#050711]">
+      <SEOHead
+        title="About Trivexon — Premium Web & AI Agency in Mumbai"
+        description="Learn about Trivexon — a premium web design, software development & AI automation agency from Mumbai. 5+ expert team, 10+ projects, 4.9★ client rating."
+        canonical="/about"
+        keywords="about Trivexon, web development agency Mumbai, software company Mumbai, digital agency about us, AI agency India"
+        schema={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" }
+        ])}
+      />
 
       {/* ===== PAGE HERO ===== */}
       <section className="relative min-h-[55vh] flex items-center overflow-hidden bg-[#050711]">

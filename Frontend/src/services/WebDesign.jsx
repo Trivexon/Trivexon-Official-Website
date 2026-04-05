@@ -1,10 +1,34 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Globe, Smartphone, Zap, PenTool, Code2, Shield, Layers, Eye, RefreshCw, Search } from "lucide-react";
+import SEOHead, { buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from "../components/SEOHead";
 
 export default function WebDesign() {
+  const schema = [
+    buildServiceSchema({
+      name: "Web Design & Development",
+      description: "Professional web design and development services in Mumbai. We build high-performance, SEO-optimized, responsive websites and web applications.",
+      url: "/services/web-design",
+      image: "/images/web.png",
+    }),
+    buildBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services/web-design" },
+      { name: "Web Design & Development", path: "/services/web-design" },
+    ]),
+  ];
+
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="Web Design & Development Agency in Mumbai"
+        description="Trivexon builds stunning, high-converting websites in Mumbai. React, Next.js, WordPress — SEO-optimized, fast-loading, and mobile-first. Free consultation."
+        canonical="/services/web-design"
+        image="/images/web.png"
+        keywords="web design agency Mumbai, website development company Mumbai, React developer Mumbai, Next.js agency India, custom website design Mumbai"
+        schema={schema[0]}
+      />
+      <ServicePage
       badge="Web Design & Development"
       title='Stunning Websites That <span class="text-gradient">Convert & Perform</span>'
       description="We design and develop high-performance websites that combine breathtaking aesthetics with conversion-optimised UX — from corporate sites to complex web applications."
@@ -72,5 +96,6 @@ export default function WebDesign() {
         { q: "Do you redesign existing websites?", a: "Yes, we love redesign projects. We analyse UX issues, replatform if needed, and deliver a faster, better-converting version." },
       ]}
     />
+    </>
   );
 }

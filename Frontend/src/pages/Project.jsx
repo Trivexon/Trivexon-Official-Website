@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Filter } from "lucide-react";
+import SEOHead, { buildBreadcrumbSchema } from "../components/SEOHead";
 
 const projects = [
   {
@@ -79,6 +80,16 @@ const projects = [
 export default function OurWorks() {
   return (
     <div className="bg-[#050711]">
+      <SEOHead
+        title="Portfolio — Web Design & AI Projects by Trivexon"
+        description="Explore Trivexon's portfolio of web design, AI automation, ERP/CRM, and software development projects. Delivered for clients across India and globally."
+        canonical="/project"
+        keywords="Trivexon portfolio, web development projects India, AI automation projects, software agency portfolio Mumbai"
+        schema={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/project" }
+        ])}
+      />
 
       {/* ===== PAGE HERO ===== */}
       <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#050711]">

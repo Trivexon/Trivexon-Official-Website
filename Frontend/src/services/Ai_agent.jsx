@@ -1,10 +1,24 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Bot, Zap, Globe, BarChart2, RefreshCw, Shield, Database, Code2, MessageSquare, Settings } from "lucide-react";
-
+import SEOHead, { buildServiceSchema } from "../components/SEOHead";
 export default function Ai_agent() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="Custom AI Agent Development India"
+        description="Hire Trivexon to build autonomous AI agents powered by LLMs (GPT-4) that can execute multi-step tasks, access tools, and replace complex human workflows."
+        canonical="/services/ai-agent"
+        image="/images/ai agent hero.png"
+        keywords="AI agent development India, custom autonomous agents, LLM agents development company, AI chatbot vs agent, reasoning AI agents development"
+        schema={buildServiceSchema({
+          name: "AI Agent Development",
+          description: "Development of custom AI agents that execute reasoning tasks and tool-use.",
+          url: "/services/ai-agent",
+          image: "/images/ai agent hero.png",
+        })}
+      />
+      <ServicePage
       badge="AI Agent Development"
       title='Custom AI Agents That <span class="text-gradient">Think, Act & Decide</span>'
       description="We build autonomous AI agents that reason through complex tasks, use tools, access databases, and take actions — going far beyond simple chatbots or rule-based automation."
@@ -67,5 +81,6 @@ export default function Ai_agent() {
         { q: "What LLMs do you use?", a: "We use GPT-4o, Claude 3.5 Sonnet, or open-source models depending on your latency, cost, and privacy requirements." },
       ]}
     />
+    </>
   );
 }

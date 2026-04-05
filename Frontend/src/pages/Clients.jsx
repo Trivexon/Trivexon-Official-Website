@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, CheckCircle, Handshake, Clock, Shield } from "lucide-react";
+import SEOHead, { buildBreadcrumbSchema } from "../components/SEOHead";
 
 const clients = [
   {
@@ -122,6 +123,16 @@ export default function Clients() {
 
   return (
     <div className="bg-[#050711]">
+      <SEOHead
+        title="Our Clients — Trusted by Businesses Across India"
+        description="Trivexon has partnered with startups, SMEs, and enterprises across India. See our client success stories in web design, AI automation, and software development."
+        canonical="/clients"
+        keywords="Trivexon clients, web agency clients Mumbai, client testimonials software company India, trusted web development partners"
+        schema={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Clients", path: "/clients" }
+        ])}
+      />
 
       {/* ===== PAGE HERO ===== */}
       <section className="relative min-h-[55vh] flex items-center overflow-hidden bg-[#050711]">

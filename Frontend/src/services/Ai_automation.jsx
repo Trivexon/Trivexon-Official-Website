@@ -1,10 +1,24 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Bot, Zap, RefreshCw, BarChart2, Mail, MessageSquare, Shield, Database, Settings, Globe } from "lucide-react";
-
+import SEOHead, { buildServiceSchema } from "../components/SEOHead";
 export default function Ai_automation() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="AI Automation Agency India — Automate Business Operations"
+        description="Trivexon builds custom AI automation workflows to eliminate manual tasks. From email triaging to document extraction — we integrate AI into your business."
+        canonical="/services/ai-automation"
+        image="/images/ai automation.png"
+        keywords="AI automation agency India, business process automation Mumbai, workflow automation services, intelligent process automation India, custom AI solutions"
+        schema={buildServiceSchema({
+          name: "AI Automation",
+          description: "Custom AI automation services. We build smart workflows to speed up business processes.",
+          url: "/services/ai-automation",
+          image: "/images/ai automation.png",
+        })}
+      />
+      <ServicePage
       badge="AI Automation"
       title='Automate Everything. <span class="text-gradient">Scale Without Limits.</span>'
       description="We build intelligent AI automation systems that eliminate repetitive tasks, accelerate workflows, and free your team to focus on what actually moves the needle."
@@ -67,5 +81,6 @@ export default function Ai_automation() {
         { q: "Does it integrate with our existing tools?", a: "Yes — we integrate with virtually any tool that has an API: Salesforce, HubSpot, Notion, Google Workspace, Slack, and more." },
       ]}
     />
+    </>
   );
 }

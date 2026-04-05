@@ -73,7 +73,7 @@ export default function ServicePage({
             {/* Right — Image */}
             <div className="lg:col-span-7 xl:col-span-7 flex justify-end relative mt-10 lg:mt-0">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full lg:w-[125%] lg:translate-x-16 xl:translate-x-24 2xl:translate-x-32 flex items-center justify-center">
-                <img src={heroImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"} alt="Service Hero" className={heroImageClassName} />
+                <img src={heroImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"} alt={`${badge} Services by Trivexon`} className={heroImageClassName} />
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function ServicePage({
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left Side: Image */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[rgba(255,255,255,0.05)] group">
-                <img src={overview.image || "/images/home-img-2.webp"} alt="Overview" className="w-full h-auto max-h-[650px] object-cover opacity-90 transition-transform duration-700 " />
+                <img src={overview.image || "/images/home-img-2.webp"} alt={`${badge} Overview and Process`} className="w-full h-auto max-h-[650px] object-cover opacity-90 transition-transform duration-700 " />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0A0F1E]/40 mix-blend-multiply"></div>
                 {/* Decorative blur orb */}
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-[60px]" style={{ background: accentColor }}></div>

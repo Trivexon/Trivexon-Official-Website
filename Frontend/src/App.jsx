@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import SimpleFooter from "./components/Footer";
@@ -27,7 +28,7 @@ function App() {
   const handleSplashComplete = useCallback(() => setSplashDone(true), []);
 
   return (
-    <>
+    <HelmetProvider>
       {/* Splash screen — shows once on first load */}
       {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
 
@@ -47,6 +48,7 @@ function App() {
 
               {/* ===================== Services ===================== */}
               <Route path="/services/web-design" element={<WebDesign />} />
+              <Route path="/services/seo-services" element={<SeoServices />} />
               <Route path="/services/seoservices" element={<SeoServices />} />
               <Route path="/services/erp-crm" element={<Erp_Crm />} />
               <Route path="/services/e-commerce" element={<E_commerce />} />
@@ -61,7 +63,7 @@ function App() {
           <SimpleFooter />
         </Router>
       </div>
-    </>
+    </HelmetProvider>
   );
 }
 

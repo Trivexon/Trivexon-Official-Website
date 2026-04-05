@@ -1,10 +1,25 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Settings, Database, BarChart2, Users, RefreshCw, Shield, Layers, FileText, Zap, Globe } from "lucide-react";
+import SEOHead, { buildServiceSchema } from "../components/SEOHead";
 
 export default function Erp_Crm() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="Custom ERP & CRM Development in Mumbai"
+        description="Trivexon builds fully custom ERP and CRM systems for businesses in Mumbai and across India. Inventory, CRM, HR, finance modules — all in one platform."
+        canonical="/services/erp-crm"
+        image="/images/crm.png"
+        keywords="ERP development Mumbai, CRM software India, custom ERP system, CRM development company Mumbai, enterprise software development India"
+        schema={buildServiceSchema({
+          name: "Custom ERP & CRM Development",
+          description: "Fully custom ERP and CRM systems for Indian businesses. Unify sales, ops, HR, finance and more in one platform.",
+          url: "/services/erp-crm",
+          image: "/images/crm.png",
+        })}
+      />
+      <ServicePage
       badge="ERP / CRM Development"
       title='Custom ERP & CRM Systems That <span class="text-gradient">Power Your Operations</span>'
       description="We build tailor-made ERP and CRM solutions that unify your business operations, automate workflows, and give you real-time visibility across every department."
@@ -68,5 +83,6 @@ export default function Erp_Crm() {
         { q: "Will staff need training to use the system?", a: "We provide full onboarding training, video documentation, and an admin guide. The UI is designed to be intuitive for non-technical users." },
       ]}
     />
+    </>
   );
 }

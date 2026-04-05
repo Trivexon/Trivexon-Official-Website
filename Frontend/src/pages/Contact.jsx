@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Mail, Phone, Send, Clock, MessageSquare, Zap, CheckCircle } from 'lucide-react';
+import SEOHead, { buildBreadcrumbSchema } from '../components/SEOHead';
 
 const contactInfo = [
   {
@@ -76,6 +77,16 @@ const Contact = () => {
 
   return (
     <div className="bg-[#050711]">
+      <SEOHead
+        title="Contact Trivexon — Get a Free Quote from Our Mumbai Agency"
+        description="Contact Trivexon for web design, AI automation, ERP/CRM, SEO and more. Based in Mumbai. Free 30-min consultation, quotes within 48 hours. Call +91 8655685272."
+        canonical="/contact"
+        keywords="contact Trivexon, web design agency contact Mumbai, hire AI developer India, get website quote Mumbai, free consultation web agency"
+        schema={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" }
+        ])}
+      />
 
       {/* ===== PAGE HERO ===== */}
       <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#050711]">

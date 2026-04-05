@@ -1,10 +1,25 @@
 import React from "react";
 import ServicePage from "./ServicePage";
 import { Globe, Settings, Shield, Zap, RefreshCw, PenTool, Code2, Search, Smartphone, Layers } from "lucide-react";
+import SEOHead, { buildServiceSchema } from "../components/SEOHead";
 
 export default function Wordpress() {
   return (
-    <ServicePage
+    <>
+      <SEOHead
+        title="WordPress Development Agency in Mumbai"
+        description="Trivexon builds fast, secure, custom WordPress websites. No bloated plugins. 90+ PageSpeed scores. Custom themes, WooCommerce, headless WordPress — Mumbai & India."
+        canonical="/services/wordpress"
+        image="/images/wordpress.png"
+        keywords="WordPress development Mumbai, custom WordPress theme India, WooCommerce development, WordPress agency Mumbai, headless WordPress developer India"
+        schema={buildServiceSchema({
+          name: "WordPress Development",
+          description: "Fast, secure and custom WordPress websites built in Mumbai. Custom themes, WooCommerce, ACF, performance optimization and more.",
+          url: "/services/wordpress",
+          image: "/images/wordpress.png",
+        })}
+      />
+      <ServicePage
       badge="WordPress Development"
       title='Powerful WordPress Sites <span class="text-gradient">Without the Limitations</span>'
       description="We build fast, secure, and fully customised WordPress websites — from simple marketing sites to complex multi-site networks — with clean code and no bloated plugins."
@@ -67,5 +82,6 @@ export default function Wordpress() {
         { q: "Do you handle WordPress hosting?", a: "Yes, we can set up and manage hosting on WP Engine, Cloudways, or SiteGround, and handle all server configurations." },
       ]}
     />
+    </>
   );
 }
