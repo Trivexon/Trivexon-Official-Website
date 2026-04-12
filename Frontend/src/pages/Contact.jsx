@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Mail, Phone, Send, Clock, MessageSquare, Zap, CheckCircle } from 'lucide-react';
 import SEOHead, { buildBreadcrumbSchema } from '../components/SEOHead';
 
@@ -66,13 +66,40 @@ const faqs = [
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', service: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("phone", form.phone);
+    formData.append("company", form.company);
+    formData.append("service", form.service);
+    formData.append("message", form.message);
+
+    try {
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyysmCtjfxPI3S1HTiqVfYcjybfVau8wPLvM3du_TprpSg4g1HFSTR1JPKyl2xDjDTS9g/exec"; 
+      
+      await fetch(scriptURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors", // Required to avoid CORS errors with Google redirect
+      });
+      
+      setSubmitted(true);
+      setForm({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+    } catch (error) {
+      console.error("Error submitting form", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -379,10 +406,11 @@ const Contact = () => {
                       {/* Submit */}
                       <button
                         type="submit"
-                        className="btn-primary w-full justify-center text-base py-4"
+                        disabled={isSubmitting}
+                        className={`btn-primary w-full justify-center text-base py-4 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                       >
-                        Send Message
-                        <Send className="w-5 h-5" />
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                        {!isSubmitting && <Send className="w-5 h-5" />}
                       </button>
 
                       <p className="text-center text-slate-600 text-xs font-[Inter]">
