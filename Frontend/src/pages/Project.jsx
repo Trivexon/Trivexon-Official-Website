@@ -10,7 +10,7 @@ const projects = [
     category: "Web Application",
     tags: ["React", "Tailwind CSS", "Contentful API", "SEO", "Responsive"],
     description: "Premium real estate platform delivering luxury digital experiences with strong SEO, fast performance, and lead-generation funnels.",
-    image: "/images/mna.png",
+    image: "/images/mna.webp",
     accent: "#7C3AED",
     link: "https://www.mnacaps.com/",
   },
@@ -20,17 +20,17 @@ const projects = [
     category: "Web Application",
     tags: ["React", "Tailwind CSS", "Contentful API", "SEO", "Animations"],
     description: "A renewable energy brand with a high-impact digital presence — modern design, performance optimization, and top-ranking SEO.",
-    image: "/images/goodwill.png",
+    image: "/images/goodwill.webp",
     accent: "#10B981",
     link: "https://www.thegoodwillfacade.com/",
   },
   {
     id: 3,
     title: "SEBI DRHP Automation & AI Summarization Software (Desktop EXE)",
-    category: "Web App",
-    tags: ["React", "Node.js", "Cloud"],
+    category: "Desktop EXE",
+    tags: ["Python", "HTML", "CSS", "SQL", "API"],
     description: "Development and delivery of a custom desktop-based SEBI DRHP Automation Software,provided as a compiled Windows EXE, designed to automate the end-to-end processing of SEBI DRHP filings",
-    image: "/images/sebi.png",
+    image: "/images/sebi.webp",
     accent: "#06B6D4",
     link: "#",
   },
@@ -38,9 +38,9 @@ const projects = [
     id: 4,
     title: "Healthys",
     category: "Web App",
-    tags: ["Vue.js", "MySQL", "API"],
+    tags: ["Reactjs", "Node.js", "Express.js", "MongoDB", "API"],
     description: "Premium property portal with immersive virtual tours, advanced search, and an integrated CRM for high-end real estate transactions.",
-    image: "/images/Healthy.png",
+    image: "/images/Healthy.webp",
     accent: "#FBBF24",
     link: "#",
   },
@@ -48,9 +48,9 @@ const projects = [
     id: 5,
     title: "Valuation Automation System",
     category: "Financial Services & Regulatory Compliance",
-    tags: ["React Native", "Payment", "GPS"],
+    tags: ["Python", "Javascript", "HTML", "CSS", "SQL", "AWS"],
     description: "We designed and delivered a comprehensive desktop application that digitizes the complete valuation lifecycle — from client onboarding to digitally signed, tamper-proof report delivery.The system covers:Client & KYC Management — Centralized client database with auto-generated client codes, KYC profiling, PEP checks, risk categorization, and document uploads......",
-    image: "/images/valuation.jpeg",
+    image: "/images/valuation.webp",
     accent: "#F472B6",
     link: "#",
   },
@@ -60,7 +60,7 @@ const projects = [
   //   category: "Web App",
   //   tags: ["HIPAA", "Secure", "Cloud"],
   //   description: "Comprehensive healthcare management system with patient portals, appointment scheduling, and telemedicine capabilities.",
-  //   image: "/images/hero.png",
+  //   image: "/images/hero.webp",
   //   accent: "#A855F7",
   //   link: "#",
   // },
@@ -70,7 +70,7 @@ const projects = [
   //   category: "Web App",
   //   tags: ["React", "Node.js", "AI"],
   //   description: "AI-enhanced learning management system with role-based access, live classes, analytics dashboards, and gamified learning paths.",
-  //   image: "/images/project.png",
+  //   image: "/images/project.webp",
   //   accent: "#06B6D4",
   //   link: "#",
   // },
@@ -144,6 +144,8 @@ export default function OurWorks() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover object-top transition-all duration-[10s] ease-in-out group-hover/image:object-bottom"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div
                     className="absolute inset-0 hidden md:block"

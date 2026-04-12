@@ -8,9 +8,9 @@ const clients = [
     name: "MNA Capital Advisors",
     industry: "Financial Services",
     service: "Web Application Development",
-    description: "Built a comprehensive healthcare management system that streamlined patient workflows and appointment scheduling for a growing clinic chain.",
+    description: "Designed and developed a robust, full-stack web application for MNA Capital Advisors — delivering a responsive, professional platform tailored to their financial services brand and client engagement needs.",
     avatar: "MNA",
-    logo: "/images/mna1.png",
+    logo: "/images/mna1.webp",
     color: "#10B981",
     tags: ["React", "Node.js", "HIPAA"],
   },
@@ -18,9 +18,9 @@ const clients = [
     name: "The Goodwill Facade",
     industry: "Glass industry",
     service: "Web Application Development",
-    description: "Designed and developed a feature-rich learning management system with role-based access for students, teachers, and administrators.",
+    description: "Crafted a modern, visually stunning website for The Goodwill Facade — a premium glass industry brand. The site showcases their services with a clean design, seamless UX, and strong online presence across all devices.",
     avatar: "GW",
-    logo: "/images/good.png",
+    logo: "/images/good.webp",
     color: "#7C3AED",
     tags: ["LMS", "React", "AI"],
   },
@@ -28,9 +28,9 @@ const clients = [
     name: "MNA Capital Advisors",
     industry: "Financial Services",
     service: "ERP/CRM Development",
-    description: "Unified sales, inventory, and HR operations into a single enterprise platform, improving efficiency by over 40% in the first quarter.",
+    description: "Built a custom ERP/CRM system for MNA Capital Advisors, unifying their client management, deal tracking, and internal workflows into a single, integrated platform — significantly improving team efficiency and data visibility.",
     avatar: "MNA",
-    logo: "/images/mna1.png",
+    logo: "/images/mna1.webp",
     color: "#F472B6",
     tags: ["ERP", "CRM", "API"],
   },
@@ -38,9 +38,9 @@ const clients = [
     name: "MNA Capital Advisors",
     industry: "Financial Services",
     service: "SEBI DRHP Automation & AI Summarization Software (Desktop EXE)",
-    description: "Development and delivery of a custom desktop-based SEBI DRHP Automation Software,provided as a compiled Windows EXE, designed to automate the end-to-end processing of SEBI DRHP filings",
+    description: "Developed and delivered a custom desktop-based SEBI DRHP Automation Software, provided as a compiled Windows EXE, designed to automate the end-to-end processing of SEBI DRHP filings with AI-powered summarization built in.",
     avatar: "MNA",
-    logo: "/images/mna1.png",
+    logo: "/images/mna1.webp",
     color: "#FBBF24",
     tags: ["WordPress", "SEO", "Design"],
   },
@@ -48,9 +48,9 @@ const clients = [
     name: "MNA Capital Advisors",
     industry: "Financial Services",
     service: "Valuation Automation System Software",
-    description: "We designed and delivered a comprehensive desktop application that digitizes the complete valuation lifecycle — from client onboarding to digitally signed, tamper-proof report delivery..",
+    description: "Designed and delivered a comprehensive desktop application that digitizes the complete valuation lifecycle — from client onboarding to digitally signed, tamper-proof report generation and delivery.",
     avatar: "MNA",
-    logo: "/images/mna1.png",
+    logo: "/images/mna1.webp",
     color: "#06B6D4",
     tags: ["AI", "Automation", "Cloud"],
   },
@@ -207,7 +207,7 @@ export default function Clients() {
                     style={{ background: client.logo ? 'rgba(255,255,255,0.05)' : `linear-gradient(135deg, ${client.color}, ${client.color}88)` }}
                   >
                     {client.logo ? (
-                      <img src={client.logo} alt={`${client.name} logo`} className="w-full h-full object-cover" />
+                      <img src={client.logo} alt={`${client.name} logo`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                     ) : (
                       client.avatar
                     )}

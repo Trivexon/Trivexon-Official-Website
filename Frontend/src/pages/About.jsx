@@ -124,6 +124,8 @@ export default function AboutHero() {
                   src="/images/home-img-2.webp"
                   alt="About Trivexon"
                   className="w-full h-auto object-cover rounded-2xl"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Floating card */}

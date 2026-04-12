@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ServicePage from "./ServicePage";
 import { RefreshCw, Zap, Settings, Globe, Database, Mail, BarChart2, Shield, Link2, Bot } from "lucide-react";
 import SEOHead, { buildServiceSchema } from "../components/SEOHead";
@@ -9,13 +9,13 @@ export default function N8n() {
         title="n8n Workflow Automation Services in India"
         description="We build powerful n8n automation workflows connecting 500+ apps. Self-hosted, private, and unlimited automation runs. Better alternative to Zapier."
         canonical="/services/nn-workflow"
-        image="/images/n8n.png"
+        image="/images/n8n.webp"
         keywords="n8n automation developer India, workflow automation consulting, Zapier alternative developer, n8n agency Mumbai, API integration services India"
         schema={buildServiceSchema({
           name: "N8N Workflow Automation",
           description: "n8n workflow automation to integrate systems securely and cost-effectively.",
           url: "/services/nn-workflow",
-          image: "/images/n8n.png",
+          image: "/images/n8n.webp",
         })}
       />
       <ServicePage
@@ -23,7 +23,7 @@ export default function N8n() {
       title='Connect Every App. <span class="text-gradient">Automate Every Process.</span>'
       description="We build powerful n8n automation workflows that connect all your business tools — eliminating manual data entry, syncing systems, and orchestrating complex multi-step processes automatically."
       accentColor="#10B981"
-      heroImage="/images/n8n.png"
+      heroImage="/images/n8n.webp"
       heroIcon={<RefreshCw className="w-full h-full" />}
       stats={[
         { value: "500+", label: "App Integrations" },

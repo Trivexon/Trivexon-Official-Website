@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ServicePage from "./ServicePage";
 import { PenTool, Eye, Layers, Users, Smartphone, Zap, BarChart2, RefreshCw, Monitor, Code2 } from "lucide-react";
 import SEOHead, { buildServiceSchema } from "../components/SEOHead";
@@ -9,13 +9,13 @@ export default function Ui_Ux() {
         title="UI/UX Design Agency in India — Interfaces That Convert"
         description="Trivexon's UI/UX design team crafts intuitive, beautiful digital interfaces for web, mobile apps, and SaaS platforms. Driven by data, designed for users."
         canonical="/services/ui-ux"
-        image="/images/uidesgin.png"
+        image="/images/uidesgin.webp"
         keywords="UI UX design agency India, UI UX designers Mumbai, web app UI design, mobile app UI design company India, SaaS interface design"
         schema={buildServiceSchema({
           name: "UI/UX Design",
           description: "Professional UI/UX design services for web and mobile applications.",
           url: "/services/ui-ux",
-          image: "/images/uidesgin.png",
+          image: "/images/uidesgin.webp",
         })}
       />
       <ServicePage
@@ -23,7 +23,7 @@ export default function Ui_Ux() {
       title='Interfaces That <span class="text-gradient">Delight Users & Drive Results</span>'
       description="We design beautiful, intuitive, and conversion-focused digital interfaces — from mobile apps and web platforms to SaaS dashboards and design systems."
       accentColor="#06B6D4"
-      heroImage="/images/uidesgin.png"
+      heroImage="/images/uidesgin.webp"
       heroIcon={<PenTool className="w-full h-full" />}
       stats={[
         { value: "150+", label: "Designs Delivered" },

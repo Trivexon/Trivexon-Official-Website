@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 
@@ -41,7 +41,7 @@ const SimpleFooter = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-5">
-              <img src="/images/logo1.png" alt="Trivexon" className="h-15 rounded-xl object-contain" />
+              <img src="/images/logo1.webp" alt="Trivexon" className="h-15 rounded-xl object-contain" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 font-[Inter]">
               We craft premium digital experiences — from AI-powered automation to stunning web platforms that grow your business.
@@ -111,8 +111,8 @@ const SimpleFooter = () => {
                 <div className="w-8 h-8 rounded-lg bg-[rgba(6,182,212,0.1)] border border-[rgba(6,182,212,0.2)] flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4 text-cyan-400" />
                 </div>
-                <a href="mailto:trivexontech@gmail.com" className="text-slate-400 hover:text-cyan-400 text-sm font-[Inter] transition-colors">
-                  trivexontech@gmail.com
+                <a href="mailto:admin@trivexon.in" className="text-slate-400 hover:text-cyan-400 text-sm font-[Inter] transition-colors">
+                  admin@trivexon.in
                 </a>
               </li>
               <li className="flex items-start gap-4">

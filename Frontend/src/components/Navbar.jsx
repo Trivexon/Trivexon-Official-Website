@@ -75,9 +75,11 @@ const Navbar = () => {
               <div className="relative">
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
                 <img
-                  src="/images/logo1.png"
+                  src="/images/logo1.webp"
                   alt="Trivexon"
                   className="relative h-12 w-auto rounded-xl object-contain"
+                  fetchpriority="high"
+                  decoding="async"
                 />
               </div>
             </Link>

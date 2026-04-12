@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ServicePage from "./ServicePage";
 import { Globe, Smartphone, Zap, PenTool, Code2, Shield, Layers, Eye, RefreshCw, Search } from "lucide-react";
 import SEOHead, { buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from "../components/SEOHead";
@@ -9,7 +9,7 @@ export default function WebDesign() {
       name: "Web Design & Development",
       description: "Professional web design and development services in Mumbai. We build high-performance, SEO-optimized, responsive websites and web applications.",
       url: "/services/web-design",
-      image: "/images/web.png",
+      image: "/images/web.webp",
     }),
     buildBreadcrumbSchema([
       { name: "Home", path: "/" },
@@ -24,7 +24,7 @@ export default function WebDesign() {
         title="Web Design & Development Agency in Mumbai"
         description="Trivexon builds stunning, high-converting websites in Mumbai. React, Next.js, WordPress — SEO-optimized, fast-loading, and mobile-first. Free consultation."
         canonical="/services/web-design"
-        image="/images/web.png"
+        image="/images/web.webp"
         keywords="web design agency Mumbai, website development company Mumbai, React developer Mumbai, Next.js agency India, custom website design Mumbai"
         schema={schema[0]}
       />
@@ -33,7 +33,7 @@ export default function WebDesign() {
       title='Stunning Websites That <span class="text-gradient">Convert & Perform</span>'
       description="We design and develop high-performance websites that combine breathtaking aesthetics with conversion-optimised UX — from corporate sites to complex web applications."
       accentColor="#7C3AED"
-      heroImage="/images/web.png"
+      heroImage="/images/web.webp"
       heroIcon={<Globe className="w-full h-full" />}
       stats={[
         { value: "200+", label: "Sites Delivered" },

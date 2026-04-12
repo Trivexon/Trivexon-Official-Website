@@ -3,28 +3,21 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Vishal Laheri ",
+    name: "Vishal Laheri",
     role: "Founder, MNA Capital Advisors",
     text: "We engaged Trivexon to develop our website and were highly satisfied with their timely delivery, dedication, and professional approach. Impressed by their performance, we expanded the engagement to automate our key report generation and database systems, resulting in substantial efficiency gains for our team at MNA Capital Advisors. Trivexon has become our trusted technology partner—strongly recommended for web development and process automation needs.",
     avatar: "VL",
+    logo: "/images/mna1.webp",
     color: "#7C3AED",
   },
   {
     name: "Neil",
     role: "Founder, thegoodwillfacade",
-    text: "We are extremely happy with the website developed for The Goodwill Facade by Trivexon. Their team truly understood our vision and transformed it into a modern, professional, and visually appealing website.The design is clean, user-friendly, and perfectly showcases our services. The performance and responsiveness across all devices have been excellent, helping us create a strong online presence.Trivexon’s attention to detail, creativity, and timely delivery made the entire process smooth and hassle-free. We highly recommend Trivexon to anyone looking for high-quality website development services.",
+    text: "We are extremely happy with the website developed for The Goodwill Facade by Trivexon. Their team truly understood our vision and transformed it into a modern, professional, and visually appealing website.The design is clean, user-friendly, and perfectly showcases our services. The performance and responsiveness across all devices have been excellent, helping us create a strong online presence.Trivexon's attention to detail, creativity, and timely delivery made the entire process smooth and hassle-free. We highly recommend Trivexon to anyone looking for high-quality website development services.",
     avatar: "NL",
+    logo: "/images/good.webp",
     color: "#06B6D4",
   },
-  // {
-  //   name: "Savita Ballal",
-  //   role: "Owner, Boutique Store",
-  //   text: "I recently had a collaboration with Trivexon to build my online store. The team was incredibly professional and attentive to every detail. The final product surpassed all my expectations!",
-  //   avatar: "SB",
-  //   color: "#F472B6",
-  // },
-
-
 ];
 
 export default function Testimonials() {
@@ -107,22 +100,30 @@ export default function Testimonials() {
               {/* Author */}
               <div className="flex items-center gap-3 pt-5 border-t border-[rgba(255,255,255,0.06)]">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center font-[Outfit] font-bold text-sm text-white flex-shrink-0"
-                  style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}88)` }}
+                  className="w-10 h-10 rounded-full flex items-center justify-center font-[Outfit] font-bold text-sm text-white flex-shrink-0 overflow-hidden"
+                  style={{ background: item.logo ? 'rgba(255,255,255,0.06)' : `linear-gradient(135deg, ${item.color}, ${item.color}88)` }}
                 >
-                  {item.avatar}
+                  {item.logo ? (
+                    <img src={item.logo} alt={item.name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                  ) : (
+                    item.avatar
+                  )}
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="font-[Outfit] font-semibold text-white text-sm">{item.name}</p>
                   <p className="text-slate-500 text-xs font-[Inter]">{item.role}</p>
                 </div>
-                {/* <div className="ml-auto">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
-                    alt="Google Review"
-                    className="w-5 h-5 opacity-60"
-                  />
-                </div> */}
+                {item.logo && (
+                  <div className="ml-auto">
+                    <img
+                      src={item.logo}
+                      alt={`${item.name} logo`}
+                      className="h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

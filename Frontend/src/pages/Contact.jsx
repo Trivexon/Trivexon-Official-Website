@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { MapPin, Mail, Phone, Send, Clock, MessageSquare, Zap, CheckCircle } from 'lucide-react';
 import SEOHead, { buildBreadcrumbSchema } from '../components/SEOHead';
 
@@ -13,9 +13,9 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "trivexontech@gmail.com",
+    value: "admin@trivexon.in",
     color: "#06B6D4",
-    href: "mailto:trivexontech@gmail.com",
+    href: "mailto:admin@trivexon.in",
   },
   {
     icon: Phone,

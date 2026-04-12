@@ -110,6 +110,8 @@ export default function WhyChooseUs() {
                   src="/images/banner.webp"
                   alt="Why Choose Trivexon"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/60 to-transparent" />
               </div>

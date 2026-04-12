@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ServicePage from "./ServicePage";
 import { Search, BarChart2, TrendingUp, Link2, FileText, Globe, MapPin, Zap, Eye, RefreshCw } from "lucide-react";
 import SEOHead, { buildServiceSchema, buildBreadcrumbSchema } from "../components/SEOHead";
@@ -10,13 +10,13 @@ export default function SeoServices() {
         title="SEO Services Mumbai — Rank #1 on Google"
         description="Trivexon provides data-driven SEO services in Mumbai. Keyword research, on-page SEO, link building, local SEO & technical SEO. Get to page 1 of Google."
         canonical="/services/seo-services"
-        image="/images/seo.png"
+        image="/images/seo.webp"
         keywords="SEO services Mumbai, SEO company Mumbai, local SEO India, technical SEO agency, Google ranking services Mumbai, best SEO agency India"
         schema={buildServiceSchema({
           name: "SEO Services",
           description: "Data-driven SEO strategies that move your website to the top of Google. Keyword research, on-page SEO, link building, and local SEO for Indian businesses.",
           url: "/services/seo-services",
-          image: "/images/seo.png",
+          image: "/images/seo.webp",
         })}
       />
       <ServicePage
@@ -24,7 +24,7 @@ export default function SeoServices() {
       title='Rank Higher. <span class="text-gradient">Get Found. Grow Faster.</span>'
       description="Data-driven SEO strategies that move your website to the top of Google, drive qualified organic traffic, and deliver measurable ROI — not just rankings."
       accentColor="#06B6D4"
-      heroImage="/images/seo.png"
+      heroImage="/images/seo.webp"
       heroImageClassName="w-[140%] lg:w-[140%] max-w-none h-[250px] sm:h-[300px] lg:h-[480px] xl:h-[570px] object-contain transition-transform duration-700 translate-x-4 lg:translate-x-8"
       heroIcon={<Search className="w-full h-full" />}
       stats={[

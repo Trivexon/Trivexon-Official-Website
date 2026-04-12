@@ -1,4 +1,4 @@
-// import React from "react";
+﻿// import React from "react";
 
 // const clients = [
 //   {
@@ -8,7 +8,7 @@
 //       "Designed and developed a custom healthcare management system to streamline appointments, patient records, and internal workflows.",
 //     services: "Web App Development",
 //     tech: "React, Node.js, MongoDB",
-//     image: "/images/project.jpeg"
+//     image: "/images/project.webp"
 //   },
 //   {
 //     name: "EduNext Solutions",
@@ -17,7 +17,7 @@
 //       "Built a responsive learning platform with role-based access for students and admins, focused on performance and usability.",
 //     services: "UI/UX Design, Full-Stack Development",
 //     tech: "React, Express, MongoDB",
-//     image: "/images/hero.png"
+//     image: "/images/hero.webp"
 //   },
 //   {
 //     name: "FinanceFlow Pro",
@@ -26,7 +26,7 @@
 //       "Developed a secure financial analytics dashboard with real-time data visualization and comprehensive reporting features.",
 //     services: "Full-Stack Development, API Integration",
 //     tech: "Vue.js, Python, PostgreSQL",
-//     image: "/images/hero1.png"
+//     image: "/images/hero1.webp"
 //   },
 //   {
 //     name: "RetailMax",
@@ -35,7 +35,7 @@
 //       "Created a scalable e-commerce platform with inventory management, payment processing, and customer analytics.",
 //     services: "E-commerce Solution, Mobile App",
 //     tech: "React Native, Node.js, MongoDB",
-//     image: "/images/aboutus.png"
+//     image: "/images/aboutus.webp"
 //   },
 //   {
 //     name: "CloudSync Systems",
@@ -44,7 +44,7 @@
 //       "Built a comprehensive cloud storage and collaboration platform with enterprise-grade security and seamless file sharing.",
 //     services: "Cloud Architecture, SaaS Development",
 //     tech: "AWS, React, Microservices",
-//     image: "/images/our-values-1.png"
+//     image: "/images/our-values-1.webp"
 //   },
 //   {
 //     name: "GreenEnergy Co",
@@ -53,7 +53,7 @@
 //       "Developed an IoT-based energy monitoring system with predictive analytics and real-time dashboard for renewable energy management.",
 //     services: "IoT Solution, Data Analytics",
 //     tech: "Python, TensorFlow, AWS IoT",
-//     image: "/images/about1-2.jpg"
+//     image: "/images/about1-2.webp"
 //   }
 // ];
 
@@ -94,7 +94,7 @@
 //             {/* RIGHT IMAGE */}
 //             <div className="overflow-hidden bg-transparent">
 //               <img
-//                 src="/servicesimg/web.png"
+//                 src="/servicesimg/web.webp"
 //                 alt="our clients"
 //                 className="w-400 h-full object-cover"
 //               />
@@ -204,7 +204,7 @@
 //                 name: "Vishal Laheri ",
 //                 position: "Founder",
 //                 company: "MNA Capital Advisors",
-//                 image: "/images/testimonial1.jpg",
+//                 image: "/images/testimonial1.webp",
 //                 rating: 4,
 //                 testimonial: "We engaged Trivexon to develop our website and were highly satisfied with their timely delivery, dedication, and professional approach. Impressed by their performance, we expanded the engagement to automate our key report generation and database systems, resulting in substantial efficiency gains for our team at MNA Capital Advisors. Trivexon has become our trusted technology partner—strongly recommended for web development and process automation needs."
 //               },
@@ -212,7 +212,7 @@
 //                 name: "Michael Chen",
 //                 position: "CTO",
 //                 company: "EduNext Solutions",
-//                 image: "/images/testimonial2.jpg",
+//                 image: "/images/testimonial2.webp",
 //                 rating: 5,
 //                 testimonial: "The learning platform they built for us has revolutionized how we deliver education. Performance, scalability, and user experience are outstanding."
 //               },
@@ -220,7 +220,7 @@
 //                 name: "Emily Rodriguez",
 //                 position: "Founder",
 //                 company: "FinanceFlow Pro",
-//                 image: "/images/testimonial3.jpg",
+//                 image: "/images/testimonial3.webp",
 //                 rating: 5,
 //                 testimonial: "Their expertise in FinTech solutions helped us create a secure and intuitive financial dashboard. Our clients love it!"
 //               }
@@ -338,14 +338,14 @@
 //                 challenge: "Manual patient record management causing delays and errors",
 //                 solution: "Custom healthcare management system with automated workflows",
 //                 results: ["50% reduction in processing time", "95% error reduction", "Improved patient satisfaction"],
-//                 image: "/images/project.jpeg"
+//                 image: "/images/project.webp"
 //               },
 //               {
 //                 client: "EduNext Solutions",
 //                 challenge: "Scalable platform needed for growing student base",
 //                 solution: "Cloud-based learning management system with role-based access",
 //                 results: ["200% user growth supported", "99.9% uptime", "40% improvement in engagement"],
-//                 image: "/images/hero.png"
+//                 image: "/images/hero.webp"
 //               }
 //             ].map((caseStudy, index) => (
 //               <div key={index} className="bg-gray-50 rounded-2xl overflow-hidden">

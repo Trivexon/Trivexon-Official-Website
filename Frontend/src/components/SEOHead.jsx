@@ -1,8 +1,8 @@
-import React from "react";
+﻿import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const BASE_URL = "https://www.trivexon.in";
-const DEFAULT_IMAGE = `${BASE_URL}/images/hero.png`;
+const DEFAULT_IMAGE = `${BASE_URL}/images/logo1.webp`;
 
 /**
  * Reusable SEO Head Component

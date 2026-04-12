@@ -31,9 +31,11 @@ const AboutSection = () => {
             <div className="relative rounded-3xl overflow-hidden  p-1">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/images/aboutus.png"
+                  src="/images/aboutus.webp"
                   alt="About Trivexon"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050711]/60 to-transparent" />

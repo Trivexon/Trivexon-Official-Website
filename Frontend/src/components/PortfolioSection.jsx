@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     title: "MNA Capital",
     category: "Web Application",
-    image: "/images/mna.png",
+    image: "/images/mna.webp",
     link: "https://www.mnacaps.com/",
     accent: "#7C3AED",
   },
@@ -15,7 +15,7 @@ const projects = [
     id: 2,
     title: "The Goodwill Facade",
     category: "Web Application",
-    image: "/images/goodwill.png",
+    image: "/images/goodwill.webp",
     link: "https://www.thegoodwillfacade.com/",
     accent: "#06B6D4",
   },
@@ -23,7 +23,7 @@ const projects = [
     id: 3,
     title: "Valuation Automation System",
     category: "Financial Services & Regulatory Compliance",
-    image: "/images/valuation.jpeg",
+    image: "/images/valuation.webp",
     link: "/project",
     accent: "#F472B6",
   },
@@ -68,6 +68,8 @@ export default function PortfolioSection() {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-auto min-h-full object-cover object-top image-scroll-hover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] via-transparent to-transparent opacity-70" />
