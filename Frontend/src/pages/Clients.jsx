@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, CheckCircle, Handshake, Clock, Shield } from "lucide-react";
 import SEOHead, { buildBreadcrumbSchema } from "../components/SEOHead";
@@ -24,36 +24,36 @@ const clients = [
     color: "#7C3AED",
     tags: ["LMS", "React", "AI"],
   },
-  {
-    name: "MNA Capital Advisors",
-    industry: "Financial Services",
-    service: "ERP/CRM Development",
-    description: "Built a custom ERP/CRM system for MNA Capital Advisors, unifying their client management, deal tracking, and internal workflows into a single, integrated platform — significantly improving team efficiency and data visibility.",
-    avatar: "MNA",
-    logo: "/images/mna1.webp",
-    color: "#F472B6",
-    tags: ["ERP", "CRM", "API"],
-  },
-  {
-    name: "MNA Capital Advisors",
-    industry: "Financial Services",
-    service: "SEBI DRHP Automation & AI Summarization Software (Desktop EXE)",
-    description: "Developed and delivered a custom desktop-based SEBI DRHP Automation Software, provided as a compiled Windows EXE, designed to automate the end-to-end processing of SEBI DRHP filings with AI-powered summarization built in.",
-    avatar: "MNA",
-    logo: "/images/mna1.webp",
-    color: "#FBBF24",
-    tags: ["WordPress", "SEO", "Design"],
-  },
-  {
-    name: "MNA Capital Advisors",
-    industry: "Financial Services",
-    service: "Valuation Automation System Software",
-    description: "Designed and delivered a comprehensive desktop application that digitizes the complete valuation lifecycle — from client onboarding to digitally signed, tamper-proof report generation and delivery.",
-    avatar: "MNA",
-    logo: "/images/mna1.webp",
-    color: "#06B6D4",
-    tags: ["AI", "Automation", "Cloud"],
-  },
+  // {
+  //   name: "MNA Capital Advisors",
+  //   industry: "Financial Services",
+  //   service: "ERP/CRM Development",
+  //   description: "Built a custom ERP/CRM system for MNA Capital Advisors, unifying their client management, deal tracking, and internal workflows into a single, integrated platform — significantly improving team efficiency and data visibility.",
+  //   avatar: "MNA",
+  //   logo: "/images/mna1.webp",
+  //   color: "#F472B6",
+  //   tags: ["ERP", "CRM", "API"],
+  // },
+  // {
+  //   name: "MNA Capital Advisors",
+  //   industry: "Financial Services",
+  //   service: "SEBI DRHP Automation & AI Summarization Software (Desktop EXE)",
+  //   description: "Developed and delivered a custom desktop-based SEBI DRHP Automation Software, provided as a compiled Windows EXE, designed to automate the end-to-end processing of SEBI DRHP filings with AI-powered summarization built in.",
+  //   avatar: "MNA",
+  //   logo: "/images/mna1.webp",
+  //   color: "#FBBF24",
+  //   tags: ["WordPress", "SEO", "Design"],
+  // },
+  // {
+  //   name: "MNA Capital Advisors",
+  //   industry: "Financial Services",
+  //   service: "Valuation Automation System Software",
+  //   description: "Designed and delivered a comprehensive desktop application that digitizes the complete valuation lifecycle — from client onboarding to digitally signed, tamper-proof report generation and delivery.",
+  //   avatar: "MNA",
+  //   logo: "/images/mna1.webp",
+  //   color: "#06B6D4",
+  //   tags: ["AI", "Automation", "Cloud"],
+  // },
   // {
   //   name: "FinEdge Investments",
   //   industry: "Financial Services",
@@ -194,11 +194,11 @@ export default function Clients() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-30">
             {clients.map((client, i) => (
               <div
                 key={i}
-                className="group glass-card-hover card-shine rounded-2xl p-6 flex flex-col"
+                className="group glass-card-hover card-shine rounded-2xl p-6 flex flex-col w-full md:w-[calc(50%-1.5rem)] lg:max-w-[400px]"
               >
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-5">

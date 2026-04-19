@@ -14,7 +14,7 @@ export default function Marquee() {
             <span
               className="font-[Outfit] font-black text-[52px] tracking-tight leading-none"
               style={{
-                color: i % 3 === 0 ? 'transparent' : i % 3 === 1 ? '#94A3B8' : 'transparent',
+                color: i % 3 === 1 ? '#94A3B8' : '#7C3AED',
                 WebkitTextStroke: i % 3 !== 1 ? '1px rgba(124,58,237,0.5)' : 'none',
               }}
             >

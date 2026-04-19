@@ -84,7 +84,7 @@ const Contact = () => {
     formData.append("message", form.message);
 
     try {
-      const scriptURL = "https://script.google.com/macros/s/AKfycbyysmCtjfxPI3S1HTiqVfYcjybfVau8wPLvM3du_TprpSg4g1HFSTR1JPKyl2xDjDTS9g/exec"; 
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyLRUkUsCYcSCSnn66TCwwIrsgMnnfaebNzHENyhdyI1S0DNwuP4Lxk0duz8wXfFA-cAg/exec";
       
       await fetch(scriptURL, {
         method: "POST",
