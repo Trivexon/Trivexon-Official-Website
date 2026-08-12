@@ -24,7 +24,7 @@ const contactInfo = [
     value2: "+91 8657181101",
     color: "#F472B6",
     href: "tel:+918655685272",
-    href2: "tel:+918657181101",
+    // href2: "tel:+918657181101",
   },
   {
     icon: Clock,
@@ -331,7 +331,7 @@ const Contact = () => {
                             name="phone"
                             value={form.phone}
                             onChange={handleChange}
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 8655685272"
                             className="w-full rounded-xl px-4 py-3.5 text-sm font-[Inter] text-white placeholder-slate-600 outline-none transition-all duration-200"
                             style={{
                               background: 'rgba(255,255,255,0.04)',
