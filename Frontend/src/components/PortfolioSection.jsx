@@ -23,7 +23,7 @@ const projects = [
     id: 3,
     title: "Valuation Automation System",
     category: "Financial Services & Regulatory Compliance",
-    image: "/images/valuation.webp",
+    // image: "/images/valuation.webp",
     link: "/project",
     accent: "#F472B6",
   },
