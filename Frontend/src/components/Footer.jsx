@@ -117,8 +117,8 @@ const SimpleFooter = () => {
               </li>
               <li className="flex items-start gap-4">
                 <Phone className="w-5 h-5 text-pink-400 mt-0.5 flex-shrink-0" />
-                <a href="tel:+918657181101" className="text-slate-400 hover:text-pink-400 text-sm font-[Inter] transition-colors">
-                  +91 86571 81101
+                <a href="tel:+918655685272" className="text-slate-400 hover:text-pink-400 text-sm font-[Inter] transition-colors">
+                  +91 8655685272
                 </a>
               </li>
             </ul>
