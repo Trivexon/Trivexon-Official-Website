@@ -229,7 +229,7 @@ const Navbar = () => {
       </div>
       {/* Floating WhatsApp Call Button */}
       <a
-        href="https://wa.me/918657181101?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20you!"
+        href="https://wa.me/918655685272?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20you!"
         target="_blank"
         rel="noopener noreferrer"
         style={{
