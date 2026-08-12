@@ -50,7 +50,7 @@ const projects = [
     category: "Financial Services & Regulatory Compliance",
     tags: ["Python", "Javascript", "HTML", "CSS", "SQL", "AWS"],
     description: "We designed and delivered a comprehensive desktop application that digitizes the complete valuation lifecycle — from client onboarding to digitally signed, tamper-proof report delivery.The system covers:Client & KYC Management — Centralized client database with auto-generated client codes, KYC profiling, PEP checks, risk categorization, and document uploads......",
-    image: "/images/valuation.webp",
+    // image: "/images/valuation.webp",
     accent: "#F472B6",
     link: "#",
   },
